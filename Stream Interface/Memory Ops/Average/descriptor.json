@@ -1,0 +1,27 @@
+{
+  "description": "Performs an average operation over a property of all messages of the memory and returns the result as a property with name 'average' and the average value as number.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "memory",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "property"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "property",
+      "label": "Property",
+      "description": "Provide the property name for this operation.",
+      "type": "identifier",
+      "mandatory": true
+    }
+  ]
+}

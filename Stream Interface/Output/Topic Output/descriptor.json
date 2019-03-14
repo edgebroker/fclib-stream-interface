@@ -1,0 +1,29 @@
+{
+  "description": "Sends a message to a topic.",
+  "labelproperty": "topicname",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message",
+        "mandatory": false
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "topicname",
+      "label": "Topic Name",
+      "description": "Provide the name the topic to connect this output to.",
+      "type": "destination",
+      "mandatory": true
+    }
+  ]
+}

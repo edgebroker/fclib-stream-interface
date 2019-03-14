@@ -1,0 +1,47 @@
+{
+  "description": "Performs a cross check in the referenced memory if a message with the property value of the incoming message exists.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Exists",
+        "type": "message"
+      },
+      {
+        "name": "Not Exists",
+        "type": "message"
+      }
+    ]
+  },
+    "refs": {
+      "input": [
+        {
+          "name": "Memory",
+          "type": "memory",
+          "mandatory": true
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "index",
+        "label": "Index",
+        "description": "Provide the name of the index of the referenced memory.",
+        "type": "identifier",
+        "mandatory": true
+      },
+      {
+        "name": "property",
+        "label": "Property",
+        "description": "Provide the name of the property.",
+        "type": "identifier",
+        "mandatory": true
+      }
+    ]
+  }

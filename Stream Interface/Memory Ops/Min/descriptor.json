@@ -1,0 +1,27 @@
+{
+  "description": "Performs a min operation over a property of all messages of the memory and returns the message with the minimum value.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "memory",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "property",
+      "label": "Property",
+      "description": "Provide the property name for this operation.",
+      "type": "identifier",
+      "mandatory": true
+    }
+  ]
+}

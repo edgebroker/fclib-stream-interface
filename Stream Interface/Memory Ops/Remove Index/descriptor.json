@@ -1,0 +1,42 @@
+{
+  "description": "Removes all messages from the referenced memory that is equal to the referenced property value and returns a result memory.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message"
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "refs": {
+    "input": [
+      {
+        "name": "Memory",
+        "type": "memory",
+        "mandatory": true
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "index",
+      "label": "Index",
+      "description": "Provide the name of the index of the referenced memory.",
+      "type": "identifier",
+      "mandatory": true
+    },
+    {
+      "name": "property",
+      "label": "Property",
+      "description": "Provide the name of the property.",
+      "type": "identifier",
+      "mandatory": true
+    }
+  ]
+}

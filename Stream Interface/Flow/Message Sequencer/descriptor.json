@@ -1,0 +1,23 @@
+{
+  "description": "Receives an input message and calls the dynamic outputs with that message in order of definitions.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message"
+      }
+    ],
+    "outputdepend": {
+      "name": "outputs",
+      "type": "message"
+    }
+  },
+  "properties": [
+    {
+      "name": "outputs",
+      "label": "Outputs",
+      "description": "Provide the names of outputs to create.",
+      "type": "array"
+    }
+  ]
+}

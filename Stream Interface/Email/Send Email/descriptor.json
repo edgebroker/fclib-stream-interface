@@ -1,0 +1,64 @@
+{
+  "description": "Sends an Email",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message"
+      }
+    ]
+  },
+  "refs": {
+    "input": [
+      {
+        "name": "MailServer",
+        "type": "mailserver",
+        "mandatory": true
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "from",
+      "label": "From Address",
+      "description": "From email address. Can be a static address or reference a property of the incoming message with {propertyname}.",
+      "type": "string",
+      "mandatory": true
+    },
+    {
+      "name": "to",
+      "label": "To Address",
+      "description": "To email address. Can be a static address or reference a property of the incoming message with {propertyname}.",
+      "type": "string",
+      "mandatory": true
+    },
+    {
+      "name": "cc",
+      "label": "CC Address",
+      "description": "CC email address. Can be a static address or reference a property of the incoming message with {propertyname}.",
+      "type": "string",
+      "mandatory": false
+    },
+    {
+      "name": "bcc",
+      "label": "BCC Address",
+      "description": "BCC email address. Can be a static address or reference a property of the incoming message with {propertyname}.",
+      "type": "string",
+      "mandatory": false
+    },
+    {
+      "name": "subject",
+      "label": "Subject",
+      "description": "Email subject. Can be a static address or reference a property of the incoming message with {propertyname}.",
+      "type": "string",
+      "mandatory": true
+    },
+    {
+      "name": "body",
+      "label": "Body",
+      "description": "Specify the email body template. Properties of the incoming message can be referenced by {propertyname}. To use the message body use {body}. The message must be a text message then.",
+      "type": "textarea",
+      "mandatory": true
+    }
+  ]
+}

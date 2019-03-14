@@ -1,0 +1,28 @@
+{
+  "description": "Turns an input memory into a reference that can be used later. That way, any intermediate result can be used in other parts of the flow.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "memory"
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "memory"
+      }
+    ]
+  },
+  "refs": {
+    "output": [
+      {
+        "name": "Memory",
+        "type": "memory",
+        "mandatory": false
+      }
+    ]
+  },
+  "properties": [
+  ]
+}

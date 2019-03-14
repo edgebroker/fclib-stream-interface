@@ -1,0 +1,28 @@
+{
+  "description": "Turns an input property into a reference that can be used later. That way, any intermediate result can be used in other parts of the flow.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "property"
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "property"
+      }
+    ]
+  },
+  "refs": {
+    "output": [
+      {
+        "name": "Property",
+        "type": "property",
+        "mandatory": false
+      }
+    ]
+  },
+  "properties": [
+  ]
+}

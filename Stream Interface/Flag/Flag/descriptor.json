@@ -1,0 +1,21 @@
+{
+  "description": "Represents a flag that can be switched on or off.'",
+  "refs": {
+    "output": [
+      {
+        "name": "Flag",
+        "type": "flag"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "initstate",
+      "label": "Initial State",
+      "description": "Provide the initial state of this flag.",
+      "type": "choice",
+      "choice": ["On", "Off"],
+      "mandatory": true
+    }
+  ]
+}

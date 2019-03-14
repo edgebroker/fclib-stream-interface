@@ -1,0 +1,44 @@
+{
+  "description": "Applies a dynamic condition to a memory's size by using a property reference as value.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "memory",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Match",
+        "type": "memory"
+      },
+      {
+        "name": "No Match",
+        "type": "memory"
+      }
+    ]
+  },
+  "refs": {
+    "input": [
+      {
+        "name": "Property",
+        "type": "property",
+        "mandatory": true
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "comparision",
+      "label": "Comparision",
+      "description": "Enter the comparision you want to perform.",
+      "type": "choice",
+      "choice" : [
+        "=", "!=", "<", "<=", ">", ">="
+      ],
+      "default" : "=",
+      "mandatory": true
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "description": "Copies all properties of an incoming MapMessage into the body.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": []
+}

@@ -1,0 +1,27 @@
+{
+  "description": "Clears the referenced memory. ",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message"
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "refs": {
+    "input": [
+      {
+        "name": "Memory",
+        "type": "memory"
+      }
+    ]
+  },
+  "properties": [
+  ]
+}

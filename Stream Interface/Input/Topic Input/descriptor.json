@@ -1,0 +1,28 @@
+{
+  "description": "Input on a topic, non-durable, with optional selector",
+  "labelproperty": "topicname",
+  "links": {
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "topicname",
+      "label": "Topic Name",
+      "description": "Provide the name of the topic to create a subscriber on. Topic names follow SwiftMQ conventions such as MQTT.%, see docs",
+      "type": "destination",
+      "mandatory": true
+    },
+    {
+      "name": "selector",
+      "label": "Selector",
+      "description": "Provide an optional JMS message selector (SQL where condition, reference the properties in the message).",
+      "type": "selector",
+      "mandatory": false
+    }
+  ]
+}

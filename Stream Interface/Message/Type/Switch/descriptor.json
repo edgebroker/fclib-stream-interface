@@ -1,0 +1,40 @@
+{
+  "description": "Checks the message type and moves the message to the corresponding output.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "bytes",
+        "type": "message"
+      },
+      {
+        "name": "text",
+        "type": "message"
+      },
+      {
+        "name": "map",
+        "type": "message"
+      },
+      {
+        "name": "stream",
+        "type": "message"
+      },
+      {
+        "name": "object",
+        "type": "message"
+      },
+      {
+        "name": "message",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+  ]
+}

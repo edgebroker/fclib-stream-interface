@@ -1,0 +1,19 @@
+{
+  "description": "Converts a timer event to an empty message to use it for components that have input connectors of type 'message'",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "timer",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": []
+}

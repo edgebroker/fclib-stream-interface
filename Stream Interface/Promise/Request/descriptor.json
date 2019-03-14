@@ -1,0 +1,45 @@
+{
+  "description": "Sends a request message and awaits a reply or times out. The component sets a unique correlation id into JMSCorrelationID of the request and excepts this in the reply message. It also sets property '_correlationid' internally. It calls the 'Reply' output on match, the 'Invalid' output if it has no match and the 'Timeout' output with the original request on timeout.",
+  "links": {
+    "input": [
+      {
+        "name": "InRequest",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "OutRequest",
+        "type": "message",
+        "mandatory": true
+      },
+      {
+        "name": "Reply",
+        "type": "message",
+        "mandatory": true
+      },
+      {
+        "name": "Timeout",
+        "type": "message",
+        "mandatory": false
+      },
+      {
+        "name": "Invalid",
+        "type": "message",
+        "mandatory": false
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "timeout",
+      "label": "Timeout (Seconds)",
+      "description": "Provide the timeout of a request in seconds.",
+      "type": "integer",
+      "min": 1,
+      "default": 10,
+      "mandatory": true
+    }
+  ]
+}

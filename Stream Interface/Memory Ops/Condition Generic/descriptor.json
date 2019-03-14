@@ -1,0 +1,31 @@
+{
+  "description": "Applies a condition to a Memory",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "memory",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Match",
+        "type": "memory"
+      },
+      {
+        "name": "No Match",
+        "type": "memory"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "condition",
+      "label": "Condition",
+      "description": "Enter the JavaScript code for the condition you perform on the associated Memory. The Memory can be referenced through variable 'In'. The code MUST have a boolean return statement.",
+      "type": "code",
+      "mandatory": true
+    }
+  ]
+}

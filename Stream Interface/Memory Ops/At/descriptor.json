@@ -1,0 +1,28 @@
+{
+  "description": "Returns a message at a specific position of the memory if the position is < the memory's size.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "memory",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "position",
+      "label": "Position",
+      "description": "Provide the position of the message in the memory (0..size()-1).",
+      "type": "integer",
+      "min": 0,
+      "mandatory": true
+    }
+  ]
+}

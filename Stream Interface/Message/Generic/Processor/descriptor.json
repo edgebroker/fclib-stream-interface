@@ -1,0 +1,36 @@
+{
+  "description": "A generic message processor that receives an input message, performs a generic operation and produces an output message.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "refs": {
+    "input": [
+      {
+        "name": "Memory",
+        "type": "memory",
+        "mandatory": false
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "operation",
+      "label": "Operation",
+      "description": "Provide the JavaScript code to perform the operation on the input message and create an output message. The input message must be referenced by 'In'. The last statement must be a return of the output message.",
+      "type": "code",
+      "mandatory": true
+    }
+  ]
+}

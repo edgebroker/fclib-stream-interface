@@ -1,0 +1,30 @@
+{
+  "description": "Checks a flag.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message"
+      }
+    ],
+    "output": [
+      {
+        "name": "Set",
+        "type": "message"
+      },
+      {
+        "name": "Unset",
+        "type": "message"
+      }
+    ]
+  },
+  "refs": {
+    "input": [
+      {
+        "name": "Flag",
+        "type": "flag"
+      }
+    ]
+  },
+  "properties": []
+}

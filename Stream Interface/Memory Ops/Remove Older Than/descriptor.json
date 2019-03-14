@@ -1,0 +1,63 @@
+{
+  "description": "Remoces all messages from the referenced memory that is older than the given time and returns a result memory.",
+  "links": {
+    "input": [
+      {
+        "name": "TimerTrigger",
+        "type": "timer"
+      }
+    ],
+    "output": [
+      {
+        "name": "Result",
+        "type": "memory"
+      }
+    ]
+  },
+  "refs": {
+    "input": [
+      {
+        "name": "Memory",
+        "type": "memory",
+        "mandatory": true
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "days",
+      "label": "Days",
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    {
+      "name": "hours",
+      "label": "Hours",
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    {
+      "name": "minutes",
+      "label": "Minutes",
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    {
+      "name": "seconds",
+      "label": "Seconds",
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    {
+      "name": "milliseconds",
+      "label": "Milliseconds",
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    }
+  ]
+}

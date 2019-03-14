@@ -1,0 +1,53 @@
+{
+  "description": "Sends a state to a monitor panel",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message"
+      }
+    ],
+    "output": [
+      {
+        "name": "State",
+        "type": "statemessage"
+      },
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "sendtoflow",
+      "label": "Send also to the Flow's Monitor Panel",
+      "description": "If checked, sends the state also to the flow's monitor panel.",
+      "type": "boolean",
+      "default" : false,
+      "mandatory": true
+    },
+    {
+      "name": "state",
+      "label": "State",
+      "description": "Provide the state to send.",
+      "type": "choice",
+      "choice": ["GREEN", "YELLOW", "RED"],
+      "mandatory": true
+    },
+    {
+      "name": "monitor",
+      "label": "Monitor",
+      "description": "Name of the monitor.",
+      "type": "string",
+      "mandatory": true
+    },
+    {
+      "name": "text",
+      "label": "Text",
+      "description": "The text of the state message. Properties of the incoming message can be referenced by {propertyname}. To use the message body use {body}. The message must be a text message then.",
+      "type": "string",
+      "mandatory": true
+    }
+  ]
+}

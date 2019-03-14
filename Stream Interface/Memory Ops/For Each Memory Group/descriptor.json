@@ -1,0 +1,27 @@
+{
+  "description": "Calls the output for each memory of the memory group.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message"
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "memory"
+      }
+    ]
+  },
+  "refs": {
+    "input": [
+      {
+        "name": "MemoryGroup",
+        "type": "memorygroup"
+      }
+    ]
+  },
+  "properties": [
+  ]
+}

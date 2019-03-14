@@ -1,0 +1,42 @@
+{
+  "description": "Selects all messages from the referenced memory that is equal to the property value of the input message and returns a result memory.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message"
+      }
+    ],
+    "output": [
+      {
+        "name": "Result",
+        "type": "memory"
+      }
+    ]
+  },
+  "refs": {
+    "input": [
+      {
+        "name": "Memory",
+        "type": "memory",
+        "mandatory": true
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "index",
+      "label": "Index",
+      "description": "Provide the name of the index of the referenced memory.",
+      "type": "identifier",
+      "mandatory": true
+    },
+    {
+      "name": "property",
+      "label": "Property",
+      "description": "Provide the name of the property.",
+      "type": "identifier",
+      "mandatory": true
+    }
+  ]
+}

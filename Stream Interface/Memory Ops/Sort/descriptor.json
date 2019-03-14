@@ -1,0 +1,38 @@
+{
+  "description": "Performs a sort operation over a property of all messages of the memory and returns a new sorted memory.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "memory",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "memory"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "property",
+      "label": "Property",
+      "description": "Provide the property name for this operation.",
+      "type": "identifier",
+      "mandatory": true
+    },
+    {
+      "name": "order",
+      "label": "Order",
+      "description": "Choose the sort order.",
+      "type": "choice",
+      "choice": [
+        "Ascending",
+        "Descending"
+      ],
+      "mandatory": true
+    }
+  ]
+}

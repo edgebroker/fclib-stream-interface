@@ -1,0 +1,13 @@
+{
+  "description": "Sends an empty message to the output connector on flow stop. Any activities that must be done on flow stop can be connected here.",
+  "links": {
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+  ]
+}

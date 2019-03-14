@@ -1,0 +1,29 @@
+{
+  "description": "Sends a message to a queue.",
+  "labelproperty": "queuename",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message",
+        "mandatory": false
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "queuename",
+      "label": "Queue Name",
+      "description": "Provide the name the queue to connect this output to.",
+      "type": "destination",
+      "mandatory": true
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "description": "A memory group provides session windowing and automatically creates new memories for each distinct value of a group property. Arriving messages are stored into the memory of that particular group. Memory groups require a memory factory attached to create the memories. These memories can be configured with the respective windowing.",
+  "links": {
+    "input": [
+      {
+        "name": "Add",
+        "type": "message"
+      },
+      {
+        "name": "Check Limit",
+        "type": "timer",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "refs": {
+    "input": [
+      {
+        "name": "MemoryFactory",
+        "type": "memoryfactory",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "MemoryGroup",
+        "type": "memorygroup"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "groupproperty",
+      "label": "Group Property",
+      "description": "Specify the name of the  property which is used to group the messages.",
+      "type": "identifier",
+      "mandatory": true
+    },
+    {
+      "name": "inactivitytimeout",
+      "label": "Group Inactivity Timeout",
+      "description": "Specifies a time of inactivity (no adds to attached memory) after which all messages in that memory will retire and the memory will be closed and removed from the memory group",
+      "type": "boolean",
+      "mandatory": false
+    },
+    {
+      "name": "inactivitydays",
+      "label": "Days",
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    {
+      "name": "inactivityhours",
+      "label": "Hours",
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    {
+      "name": "inactivityminutes",
+      "label": "Minutes",
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    {
+      "name": "inactivityseconds",
+      "label": "Seconds",
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    {
+      "name": "inactivitymilliseconds",
+      "label": "Milliseconds",
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    }
+  ]
+}

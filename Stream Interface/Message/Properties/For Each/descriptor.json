@@ -1,0 +1,20 @@
+{
+  "description": "Calls the output for each property of the message.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "propertyset",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "property"
+      }
+    ]
+  },
+  "properties": [
+  ]
+}

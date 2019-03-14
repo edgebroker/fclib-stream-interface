@@ -1,0 +1,40 @@
+{
+  "description": "Extracts fields out of a JSON message body using JSON Paths. Each path will be selected from the JSON and stored under the corresponding property name in the message.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "names",
+      "label": "Names",
+      "type": "array",
+      "description": "Provide the names of the properties which must correspond to the paths in the 'Paths'.",
+      "fieldtypes": [
+        "identifier"
+      ],
+      "mandatory": true
+    },
+    {
+      "name": "paths",
+      "label": "Paths",
+      "description": "Provide the JSON Path which must correspond to the names in the 'Names'. A JSON Path always starts with a '$.'.",
+      "type": "array",
+      "fieldtypes": [
+        "jsonpath"
+      ],
+      "mandatory": true
+    }
+  ]
+}

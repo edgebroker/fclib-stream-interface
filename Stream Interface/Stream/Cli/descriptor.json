@@ -1,0 +1,45 @@
+{
+  "description": "Executes CLI commands. ",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message"
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "exceptionoff",
+      "label": "Exception Off",
+      "description": "If checked, it will suppress CLI exception during executions. E.g. if a queue exists and will be created, CLI will throw an exception this will lead to a stop of the flow.",
+      "type": "boolean",
+      "default": true,
+      "mandatory": false
+    },
+    {
+      "name": "executeoninit",
+      "label": "Execute during Flow Init",
+      "description": "If checked, commands will be executed during flow initialization.",
+      "type": "boolean",
+      "default": false,
+      "mandatory": false
+    },
+    {
+      "name": "commands",
+      "label": "Commands",
+      "type": "array",
+      "description": "Provide the CLI commands to be executed.",
+      "fieldtypes": [
+        "string"
+      ],
+      "mandatory": true
+    }
+  ]
+}

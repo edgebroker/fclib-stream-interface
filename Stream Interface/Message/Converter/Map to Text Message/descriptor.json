@@ -1,0 +1,19 @@
+{
+  "description": "Converts a MapMessage into a TextMessage. The body of the MapMessages will be converted to a stringified JSON and stored into the TextMessage body. All properties of the MapMessage will be copied into the TextMessage.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": []
+}

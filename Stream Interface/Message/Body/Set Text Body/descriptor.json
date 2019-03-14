@@ -1,0 +1,27 @@
+{
+  "description": "Sete the body of a Text Message",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "body",
+      "label": "Body",
+      "description": "Specify the text body template. Properties of the incoming message can be referenced by {propertyname}, flow parameters by {{parametername}}.",
+      "type": "textarea",
+      "mandatory": true
+    }
+  ]
+}

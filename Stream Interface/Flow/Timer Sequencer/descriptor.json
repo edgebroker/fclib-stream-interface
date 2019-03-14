@@ -1,0 +1,23 @@
+{
+  "description": "Receives an input timer event and calls the dynamic outputs with that timer in order of definitions.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "timer"
+      }
+    ],
+    "outputdepend": {
+      "name": "outputs",
+      "type": "property"
+    }
+  },
+  "properties": [
+    {
+      "name": "outputs",
+      "label": "Outputs",
+      "description": "Provide the names of outputs to create.",
+      "type": "array"
+    }
+  ]
+}

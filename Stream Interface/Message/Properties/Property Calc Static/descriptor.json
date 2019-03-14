@@ -1,0 +1,34 @@
+{
+  "description": "Calculates and sets a static property value in the message.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "outproperty",
+      "label": "Output Message Property",
+      "description": "Provide the name of the property of the message that is set to the new calculated value.",
+      "type": "identifier",
+      "mandatory": true
+    },
+     {
+      "name": "operation",
+      "label": "Operation",
+      "description": "Provide the JavaScript code for the operation to perform. The code must end with a return statement with the calculated value.",
+      "type": "code",
+      "mandatory": true
+    }
+  ]
+}

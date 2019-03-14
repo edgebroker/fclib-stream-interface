@@ -1,0 +1,35 @@
+{
+  "description": "Input on a queue with optional selector, regular or wiretap consumer.",
+  "labelproperty": "queuename",
+  "links": {
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "queuename",
+      "label": "Queue Name",
+      "description": "Provide the name of the queue to connect this input to.",
+      "type": "destination",
+      "mandatory": true
+    },
+    {
+      "name": "wiretap",
+      "label": "As Wiretap",
+      "description": "A wiretap gets copies of messages from the queue but leaves the original message untouched. Otherwise it is a regular consumer on that queue.",
+      "type": "boolean",
+      "mandatory": true
+    },
+    {
+      "name": "selector",
+      "label": "Selector",
+      "description": "Provide an optional JMS message selector (SQL where condition, reference the properties in the message).",
+      "type": "selector",
+      "mandatory": false
+    }
+  ]
+}

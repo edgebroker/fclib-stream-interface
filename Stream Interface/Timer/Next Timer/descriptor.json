@@ -1,0 +1,26 @@
+{
+  "description": "One-shot Timer that executes once at the begin of a specific time: begin of the next second, minute, hour or day.",
+  "links": {
+    "output": [
+      {
+        "name": "onTimer",
+        "type": "timer"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "beginof",
+      "label": "Begin Of",
+      "description": "Provide the time when this timer should fire.",
+      "type": "choice",
+      "choice": [
+        "Second",
+        "Minute",
+        "Hour",
+        "Day"
+      ],
+      "mandatory": true
+    }
+  ]
+}

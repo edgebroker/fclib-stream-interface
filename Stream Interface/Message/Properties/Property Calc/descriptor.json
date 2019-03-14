@@ -1,0 +1,50 @@
+{
+  "description": "Calculates and sets a property value in the message by using a property of the input message and a referenced property.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "refs": {
+    "input": [
+      {
+        "name": "Property",
+        "type": "property",
+        "mandatory": true
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "inproperty",
+      "label": "Input Message Property",
+      "description": "Provide the name of the property of the message that is used to calculated the value.",
+      "type": "identifier",
+      "mandatory": true
+    },
+    {
+      "name": "outproperty",
+      "label": "Output Message Property",
+      "description": "Provide the name of the property of the message that is set to the new calculated value.",
+      "type": "identifier",
+      "mandatory": true
+    },
+    {
+      "name": "operation",
+      "label": "Operation",
+      "description": "Provide the JavaScript code for the operation to perform. The value of the input property of this message must be referenced with 'MessageProp', the value of the referenced property with 'RefProp'. The code must end with a return statement with the calculated value, e.g. 'return MessageProp+RefProp'.",
+      "type": "code",
+      "mandatory": true
+    }
+  ]
+}

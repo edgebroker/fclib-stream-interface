@@ -1,0 +1,210 @@
+{
+  "description": "A Memory stores messages. All messages in a Memory must have the same message properties. This Memory stores messages either persistent, non-persistent or in memory (heap).",
+  "links": {
+    "input": [
+      {
+        "name": "Add",
+        "type": "message"
+      },
+      {
+        "name": "Check Limit",
+        "type": "timer"
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      },
+      {
+        "name": "onRetire",
+        "type": "memory"
+      }
+    ]
+  },
+  "refs": {
+    "output": [
+      {
+        "name": "Memory",
+        "type": "memory"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "type",
+      "label": "Memory Type",
+      "description": "Provide the type of this Memory.",
+      "type": "choice",
+      "choice": [
+        "Persistent",
+        "Non Persistent",
+        "Heap"
+      ],
+      "mandatory": true
+    },
+    {
+      "name": "indexes",
+      "label": "Create Indexes for properties",
+      "type": "array",
+      "description": "Creates an index for faster lookup for this property names.",
+      "fieldtypes": [
+        "identifier"
+      ],
+      "mandatory": false
+    },
+    {
+      "name": "orderby",
+      "label": "Order By Property",
+      "description": "Provide an order by property name of the message that contains the event time. Order is by store time if not specified",
+      "type": "identifier",
+      "mandatory": false
+    },
+    {
+      "name": "droplate",
+      "label": "Drop Late Arrivals",
+      "description": "If ordered by event time and the time is less than the start of this window time, the message will be dropped if enabled.",
+      "type": "boolean",
+      "mandatory": false
+    },
+    {
+      "name": "inactivitytimeout",
+      "label": "Inactivity Timeout",
+      "description": "If ordered by event time specifies a timeout after which the window will retire if no further messages arrive.",
+      "type": "boolean",
+      "mandatory": false
+    },
+    {
+      "name": "inactivitydays",
+      "label": "Days",
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    {
+      "name": "inactivityhours",
+      "label": "Hours",
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    {
+      "name": "inactivityminutes",
+      "label": "Minutes",
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    {
+      "name": "inactivityseconds",
+      "label": "Seconds",
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    {
+      "name": "inactivitymilliseconds",
+      "label": "Milliseconds",
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    {
+      "name": "windowtype",
+      "label": "Window Type",
+      "description": "Specify the type of window of this memory. Sliding: If a new Message is being added and the limit is reached, the oldest Message will retire. Tumbling: If a new Message is being added and the limit is reached, all Messages will retire and the Memory is empty.",
+      "type": "choice",
+      "choice": [
+        "Sliding",
+        "Tumbling"
+      ],
+      "mandatory": true
+    },
+    {
+      "name": "countlimit",
+      "label": "Count Limit",
+      "description": "Retires a window by reaching a message count. Can be combined with a Time Limit.",
+      "type": "boolean",
+      "mandatory": false
+    },
+    {
+      "name": "maximum",
+      "label": "Count Limit Maxmimum",
+      "description": "Provide the maximum number of messages stored in the Memory.",
+      "type": "integer",
+      "min": 0,
+      "default": 0,
+      "mandatory": false
+    },
+    {
+      "name": "timelimit",
+      "label": "Time Limit",
+      "description": "Retires a window after a given time (note: all times are added). Can be combined with a Count Limit.",
+      "type": "boolean",
+      "mandatory": false
+    },
+    {
+      "name": "timelimitdays",
+      "label": "Days",
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    {
+      "name": "timelimithours",
+      "label": "Hours",
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    {
+      "name": "timelimitminutes",
+      "label": "Minutes",
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    {
+      "name": "timelimitseconds",
+      "label": "Seconds",
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    {
+      "name": "timelimitmilliseconds",
+      "label": "Milliseconds",
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    {
+      "name": "timeunitchangelimit",
+      "label": "Time Unit Change Limit",
+      "description": "A TimeUnitChangeLimit keeps a Memory at a specific time unit window (e.g. 1 hour based on midnight) and removes older Messages if necessary. The difference between a time unit limit and a time limit is that the time limit has the window base at the time when it is started, e.g. started at 18:12:17 with a 10 secs window has a window from 18:12:17 to 18:12:27 exclusive. A time unit change limit, however, has a fixed base and synchronizes the first window to it. For example, a 10 secs window started at 18:12:17 has a window start at 18:12:10 and ends therefore at 18:12:20 (exclusive). So this first window is only 13 secs long. The following windows will have full 10 secs. This is useful to synchronize events on fixed base times (full seconds/minutes/hours etc).",
+      "type": "boolean",
+      "mandatory": false
+    },
+    {
+      "name": "timeunitchangevalue",
+      "label": "Time Change Value",
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    {
+      "name": "timeunitchangeunit",
+      "label": "Unit",
+      "type": "choice",
+      "choice": [
+        "Second",
+        "Minute",
+        "Hour",
+        "Day",
+        "Week",
+        "Month",
+        "Year"
+      ]
+    }
+  ]
+}

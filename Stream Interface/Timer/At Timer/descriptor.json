@@ -1,0 +1,24 @@
+{
+  "description": "Recurring Timer that executes on a specific time of the day. Time format is 'HH:MM' or 'HH:MM:SS'.",
+  "links": {
+    "output": [
+      {
+        "name": "onTimer",
+        "type": "timer"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "times",
+      "label": "Times (HH:MM or HH:MM:SS)",
+      "description": "Provide the times in the above format when this timer should fire.",
+      "type": "array",
+      "fieldtypes": [
+        "time_hour_minute",
+        "time_hour_minute_seconds"
+      ],
+      "mandatory": true
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "description": "Configures a mail server to send emails.",
+  "refs": {
+    "output": [
+      {
+        "name": "MailServer",
+        "type": "mailserver"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "hostname",
+      "label": "Host Name",
+      "description": "Host name of the mail server.",
+      "type": "string",
+      "mandatory": true
+    },
+    {
+      "name": "port",
+      "label": "SMTP Port",
+      "type": "integer",
+      "description": "The SMTP port.",
+      "min": 0,
+      "default": 25,
+      "mandatory": false
+    },
+    {
+      "name": "username",
+      "label": "User Name",
+      "description": "User name at the mail server.",
+      "type": "string",
+      "mandatory": true
+    },
+    {
+      "name": "password",
+      "label": "Password",
+      "description": "Password of the user at the mail server.",
+      "type": "string",
+      "mandatory": true
+    }
+  ]
+}

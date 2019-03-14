@@ -1,0 +1,43 @@
+{
+  "description": "Updates a message in a memory.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "refs": {
+    "input": [
+      {
+        "name": "Memory",
+        "type": "memory",
+        "mandatory": true
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "index",
+      "label": "Index",
+      "description": "Provide the name of the memory index to select the message.",
+      "type": "identifier",
+      "mandatory": true
+    },
+    {
+      "name": "property",
+      "label": "Property",
+      "description": "Provide the name of the property that provides the key.",
+      "type": "identifier",
+      "mandatory": true
+    }
+  ]
+}

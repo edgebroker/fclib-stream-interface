@@ -1,0 +1,32 @@
+{
+  "description": "Switch with one input and multiple outputs (value dependent). This component actually creates a 'switch' statement with 'cases'.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "outputdepend": {
+      "name": "values",
+      "type": "message"
+    }
+  },
+  "properties": [
+    {
+      "name": "property",
+      "label": "Property",
+      "description": "Provide the name of the property in the message which values should be verified.",
+      "type": "string",
+      "mandatory": true
+    },
+    {
+      "name": "values",
+      "label": "Values",
+      "description": "Provide the values to verify. A separate output connector is created for each distinct value.",
+      "type": "array",
+      "mandatory": true
+    }
+  ]
+}

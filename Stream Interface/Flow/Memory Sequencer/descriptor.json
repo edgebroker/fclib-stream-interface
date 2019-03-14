@@ -1,0 +1,23 @@
+{
+  "description": "Receives an input memory and calls the dynamic outputs with that memory in order of definitions.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "memory"
+      }
+    ],
+    "outputdepend": {
+      "name": "outputs",
+      "type": "memory"
+    }
+  },
+  "properties": [
+    {
+      "name": "outputs",
+      "label": "Outputs",
+      "description": "Provide the names of outputs to create.",
+      "type": "array"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "description": "Logs message properties and body to the stream's log file",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+  ]
+}

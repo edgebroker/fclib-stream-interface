@@ -1,0 +1,26 @@
+{
+  "description": "Usets a flag.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message"
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "refs": {
+    "input": [
+      {
+        "name": "Flag",
+        "type": "flag"
+      }
+    ]
+  },
+  "properties": [  ]
+}

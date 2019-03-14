@@ -1,0 +1,64 @@
+{
+  "description": "Input on a management context.",
+  "labelproperty": "context",
+  "links": {
+    "output": [
+      {
+        "name": "Add",
+        "type": "message"
+      },
+      {
+        "name": "Change",
+        "type": "message"
+      },
+      {
+        "name": "Remove",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "context",
+      "label": "CLI Context",
+      "description": "Provide the name of the management context to connect to.",
+      "type": "string",
+      "mandatory": true
+    },
+    {
+      "name": "selector",
+      "label": "Selector",
+      "description": "Provide an optional JMS message selector (SQL where condition, reference the properties in the message).",
+      "type": "selector",
+      "mandatory": false
+    },
+    {
+      "name": "include",
+      "label": "Include Property Names",
+      "description": "Provide a blank separated list of property names that needs to be included in each message, even if there value don't change.",
+      "type": "string",
+      "mandatory": false
+    },
+    {
+      "name": "add",
+      "label": "Handle Add Events",
+      "description": "Enable it if you want that add events should be handled.",
+      "type": "boolean",
+      "mandatory": true
+    },
+    {
+      "name": "change",
+      "label": "Handle Change Events",
+      "description": "Enable it if you want that change events should be handled.",
+      "type": "boolean",
+      "mandatory": true
+    },
+    {
+      "name": "remove",
+      "label": "Handle Remove Events",
+      "description": "Enable it if you want that remove events should be handled.",
+      "type": "boolean",
+      "mandatory": true
+    }
+  ]
+}

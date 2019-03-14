@@ -1,0 +1,36 @@
+{
+  "description": "Maintains an internal sequence number that is set to a message property. The sequence number is increased by 1 with each invocation. Note: The sequence number is set as a string property.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "initvalue",
+      "label": "Initial Sequence Value",
+      "description": "Provide the initial value of the sequence.",
+      "type": "integer",
+      "min": 0,
+      "default": 0,
+      "mandatory": true
+    },
+    {
+      "name": "property",
+      "label": "Property",
+      "description": "Provide the name of the property that is set to the next sequence number.",
+      "type": "identifier",
+      "mandatory": true
+    }
+  ]
+}

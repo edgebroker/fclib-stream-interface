@@ -1,0 +1,29 @@
+{
+  "description": "Creates an output on a temporary queue which is looked up from JNDI and sends a message to the queue.",
+  "labelproperty": "jndiname",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+      "output": [
+        {
+          "name": "Out",
+          "type": "message",
+          "mandatory": false
+        }
+      ]
+  },
+  "properties": [
+    {
+      "name": "jndiname",
+      "label": "JNDI Name",
+      "description": "Provide the JNDI name of this queue to connect to.",
+      "type": "destination",
+      "mandatory": true
+    }
+  ]
+}

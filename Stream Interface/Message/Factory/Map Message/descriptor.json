@@ -1,0 +1,28 @@
+{
+  "description": "Creates a new MapsMessage and optionally copies all properties from the incoming message.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "copy",
+      "label": "Copy Properties",
+      "description": "Copies all properties from the incoming message into the new message.",
+      "type": "boolean",
+      "default": true,
+      "mandatory": true
+    }
+  ]
+}

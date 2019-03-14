@@ -1,0 +1,31 @@
+{
+  "description": "Checks if a property exists in the message.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Yes",
+        "type": "message"
+      },
+      {
+        "name": "No",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "property",
+      "label": "Property",
+      "description": "Provide the name of the property.",
+      "type": "identifier",
+      "mandatory": true
+    }
+  ]
+}

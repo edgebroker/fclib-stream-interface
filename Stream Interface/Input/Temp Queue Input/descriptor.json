@@ -1,0 +1,41 @@
+{
+  "description": "Input on a temporary queue with optional selector, regular or wiretap consumer. The temp queue is created and optionally registered in JNDI",
+  "labelproperty": "queuename",
+  "links": {
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "queuename",
+      "label": "Queue Name",
+      "description": "Provide the name of the queue under which it is registered in JNDI.",
+      "type": "destination",
+      "mandatory": true
+    },
+    {
+      "name": "wiretap",
+      "label": "As Wiretap",
+      "type": "boolean",
+      "mandatory": true
+    },
+    {
+      "name": "selector",
+      "label": "Selector",
+      "description": "Provide an optional JMS message selector (SQL where condition, reference the properties in the message).",
+      "type": "selector",
+      "mandatory": false
+    },
+    {
+      "name": "registerjndi",
+      "label": "Register JNDI",
+      "description": "Enable it to register it in JNDI so that other clients can do a lookup on it under the queue name.",
+      "type": "boolean",
+      "mandatory": false
+    }
+  ]
+}

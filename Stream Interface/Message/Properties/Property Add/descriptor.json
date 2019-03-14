@@ -1,0 +1,36 @@
+{
+  "description": "Adds the referenced property to a message.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "refs": {
+    "input": [
+      {
+        "name": "Property",
+        "type": "property",
+        "mandatory": true
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "property",
+      "label": "New Property Name",
+      "description": "If the property should be set under a new name, provide it here.",
+      "type": "identifier",
+      "mandatory": false
+    }
+  ]
+}

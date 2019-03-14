@@ -1,0 +1,19 @@
+{
+  "description": "Converts a BytesMessage into a TextMessage. The body of the BytesMessages will be converted to a string and stored into the TextMessage body. All properties of the BytesMessage will be copied into the TextMessage.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": []
+}

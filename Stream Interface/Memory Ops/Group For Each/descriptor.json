@@ -1,0 +1,20 @@
+{
+  "description": "Calls the output for each memory of the group result.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "groupresult",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "memory"
+      }
+    ]
+  },
+  "properties": [
+  ]
+}

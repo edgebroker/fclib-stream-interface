@@ -1,0 +1,27 @@
+{
+  "description": "Determines the maximum value of a property and returns the result as a new memory with messages that contains 2 Properties, the grouping property and the specified property with the maximum value.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "groupresult",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "memory"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "property",
+      "label": "Property",
+      "description": "Provide the property name for this operation.",
+      "type": "identifier",
+      "mandatory": true
+    }
+  ]
+}

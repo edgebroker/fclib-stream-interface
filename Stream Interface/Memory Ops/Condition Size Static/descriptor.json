@@ -1,0 +1,44 @@
+{
+  "description": "Applies a static condition to a memory's size.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "memory",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Match",
+        "type": "memory"
+      },
+      {
+        "name": "No Match",
+        "type": "memory"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "size",
+      "label": "Size",
+      "description": "Enter the size you want to check.",
+      "type": "integer",
+      "min" : 0,
+      "default" : 0,
+      "mandatory": true
+    },
+    {
+      "name": "comparision",
+      "label": "Comparision",
+      "description": "Enter the comparision you want to perform.",
+      "type": "choice",
+      "choice" : [
+        "=", "!=", "<", "<=", ">", ">="
+      ],
+      "default" : "=",
+      "mandatory": true
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "description": "Groups all messages of the input memory over a property and returns a group result.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "memory",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "groupresult"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "property",
+      "label": "Property",
+      "description": "Provide the property name for this operation.",
+      "type": "identifier",
+      "mandatory": true
+    }
+  ]
+}

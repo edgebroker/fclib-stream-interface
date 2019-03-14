@@ -1,0 +1,20 @@
+{
+  "description": "Returns the first message of the memory if the size of the memory is > 0.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "memory",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+  ]
+}

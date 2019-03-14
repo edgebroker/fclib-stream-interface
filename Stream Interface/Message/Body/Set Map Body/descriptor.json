@@ -1,0 +1,50 @@
+{
+  "description": "Sets the body of a Map Message.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "names",
+      "label": "Names",
+      "description": "Provide the names (keys) of the map message body that should be set to a value.",
+      "type": "array",
+      "fieldtypes": [
+        "string"
+      ],
+      "mandatory": true
+    },
+    {
+      "name": "types",
+      "label": "Types",
+      "description": "Provide the corresponding types of the properties. Possible types are 'boolean', 'string', 'integer', 'long', 'double', 'float'",
+      "type": "array",
+      "fieldtypes": [
+        "identifier"
+      ],
+      "mandatory": true
+    },
+    {
+      "name": "values",
+      "label": "Values",
+      "description": "Provide the corresponding values to set. Either enter a static value or use {propertyname} to use a property value of the referenced message or use {{flowparameter}} to set a flow parameter value. To set the current time in milliseconds, use [time].",
+      "type": "array",
+      "fieldtypes": [
+        "string"
+      ],
+      "mandatory": true
+    }
+  ]
+}

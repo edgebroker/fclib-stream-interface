@@ -1,0 +1,45 @@
+{
+  "description": "Performs an inner join of the left Memory with the right Memory over the named join Property name which must exists in the Messages of both Memories. Result is a Memory which contains Messages where each Message at the left side matches with a Message on the right side. The result Message will contain the left result Message enriched with all Properties of the right result Message.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message"
+      }
+    ],
+    "output": [
+      {
+        "name": "Memory",
+        "type": "memory"
+      }
+    ]
+  },
+  "refs": {
+    "input": [
+      {
+        "name": "Left",
+        "type": "memory"
+      },
+      {
+        "name": "Right",
+        "type": "memory"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "leftjoinprop",
+      "label": "Join Property Left",
+      "description": "Provide the name of the property of the left memory.",
+      "type": "identifier",
+      "mandatory": true
+    },
+    {
+      "name": "rightjoinprop",
+      "label": "Join Property Right",
+      "description": "Provide the name of the property of the right memory.",
+      "type": "identifier",
+      "mandatory": true
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "description": "Creates a text message with an XML body from a message reference and a memory. The XML has a 2-level hierarchy with a root tag and sub elements. The root tag is created from the root reference and the elements are created from the messages in the memory.",
+  "links": {
+    "input": [
+      {
+        "name": "Elements",
+        "type": "memory",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "refs": {
+    "input": [
+      {
+        "name": "Root",
+        "type": "message",
+        "mandatory": true
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "roottag",
+      "label": "Root XML Tag",
+      "description": "Name of the enclosing root XML tag",
+      "type": "string",
+      "mandatory": true
+    },
+    {
+      "name": "rootattr",
+      "label": "Root XML Attribute Names",
+      "description": "Provide the XML attribute names of the root XML tag.",
+      "type": "array",
+      "fieldtypes": [
+        "string"
+      ],
+      "mandatory": true
+    },
+    {
+      "name": "rootprops",
+      "label": "Root Property Names",
+      "type": "array",
+      "description": "Provide the names of the properties that provide the values of the corresponding root XML attributes.",
+      "fieldtypes": [
+        "identifier"
+      ],
+      "mandatory": true
+    },
+    {
+      "name": "eletag",
+      "label": "Element XML Tag",
+      "description": "Name of the element XML tag",
+      "type": "string",
+      "mandatory": true
+    },
+    {
+      "name": "eleattr",
+      "label": "Element XML Attribute Names",
+      "description": "Provide the XML attribute names of the element XML tag.",
+      "type": "array",
+      "fieldtypes": [
+        "string"
+      ],
+      "mandatory": true
+    },
+    {
+      "name": "eleprops",
+      "label": "Element Property Names",
+      "type": "array",
+      "description": "Provide the names of the properties that provide the values of the corresponding element XML attributes.",
+      "fieldtypes": [
+        "identifier"
+      ],
+      "mandatory": true
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "description": "Receives an input property and calls the dynamic outputs with that property in order of definitions.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "property"
+      }
+    ],
+    "outputdepend": {
+      "name": "outputs",
+      "type": "property"
+    }
+  },
+  "properties": [
+    {
+      "name": "outputs",
+      "label": "Outputs",
+      "description": "Provide the names of outputs to create.",
+      "type": "array"
+    }
+  ]
+}

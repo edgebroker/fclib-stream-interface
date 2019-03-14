@@ -1,0 +1,42 @@
+{
+  "description": "Applies a condition to a Memory",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "memory",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Match",
+        "type": "memory"
+      },
+      {
+        "name": "No Match",
+        "type": "memory"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "property",
+      "label": "Property",
+      "description": "Provide the property name for this operation.",
+      "type": "identifier",
+      "mandatory": true
+    },
+    {
+      "name": "type",
+      "label": "Is",
+      "description": "Choose the operation you want to check.",
+      "type": "choice",
+      "choice": [
+        "Ascending Series",
+        "Descending Series"
+      ],
+      "mandatory": true
+    }
+  ]
+}
