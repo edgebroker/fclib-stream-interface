@@ -56,7 +56,7 @@
     {
       "name": "body",
       "label": "Body",
-      "description": "Specify the email body template. Properties of the incoming message can be referenced by {propertyname}. To use the message body use {body}. The message must be a text message then.",
+      "description": "Specify the email body template. Properties of the incoming message can be referenced by {propertyname}. To use the message body use {body}. The message has to be a text message then.",
       "type": "textarea",
       "mandatory": true
     }
