@@ -1,0 +1,63 @@
+{
+  "description": "Checks a disk partition and maintains configurable threshold states green, yellow and red. Sends a message with the following properties set: total, used, free, used_percent, free_percent. The message is sent to the corresponding outputs dependent on the state.",
+  "links": {
+    "input": [
+      {
+        "name": "Timer",
+        "type": "timer",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "green",
+        "type": "message"
+      },
+      {
+        "name": "yellow",
+        "type": "message"
+      },
+      {
+        "name": "red",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "partition",
+      "label": "Partition Name",
+      "description": "Provide the name of the partition. Default is the partition of the router's working directory",
+      "type": "string",
+      "mandatory": false
+    },
+    {
+      "name": "dimension",
+      "label": "Dimension",
+      "description": "Provide dimension of the disk space to report.",
+      "type": "choice",
+      "choice": ["MB", "GB"],
+      "mandatory": true
+    },
+    {
+      "name": "threshold-yellow",
+      "label": "Threshold Yellow",
+      "description": "Provide the threshold in percent of used space to reach yellow state.",
+      "type": "integer",
+      "min" : 1,
+      "max" : 100,
+      "default": 80,
+      "mandatory": true
+    },
+    {
+      "name": "threshold-red",
+      "label": "Threshold Red",
+      "description": "Provide the threshold in percent of used space to reach red state.",
+      "type": "integer",
+      "min" : 1,
+      "max" : 100,
+      "default": 90,
+      "mandatory": true
+    }
+  ]
+}
