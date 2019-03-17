@@ -6,6 +6,12 @@
         "name": "In",
         "type": "message"
       }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
     ]
   },
   "refs": {
