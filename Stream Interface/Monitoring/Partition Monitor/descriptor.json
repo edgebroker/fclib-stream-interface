@@ -1,5 +1,5 @@
 {
-  "description": "Checks a disk partition and maintains configurable threshold states green, yellow and red. Sends a message with the following properties set: total, used, free, used_percent, free_percent. The message is sent to the corresponding outputs dependent on the state.",
+  "description": "Checks a disk partition and maintains configurable threshold states green, yellow and red. Sends a message with the following properties set: partition, total, used, free, used_percent, free_percent. The message is sent to the corresponding outputs dependent on the state.",
   "links": {
     "input": [
       {

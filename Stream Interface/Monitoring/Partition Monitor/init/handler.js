@@ -29,6 +29,7 @@ function handler() {
         var msg = stream.create()
             .message()
             .message()
+            .property("partition").set(self.partitionName)
             .property("total").set(total)
             .property("used").set(usable)
             .property("free").set(free)
