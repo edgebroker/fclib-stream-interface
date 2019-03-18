@@ -1,0 +1,34 @@
+{
+  "description": "Reports connected and disconnected remote routers. The outgoing message contains these properties: state, routerstates. state contains GREEN or RED, routerstates contains a string with the connection state of all routers.",
+  "links": {
+    "input": [
+      {
+        "name": "Timer",
+        "type": "timer",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "GREEN",
+        "type": "message"
+      },
+      {
+        "name": "RED",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "routers",
+      "label": "Routers",
+      "description": "Provide the routernames for which a state should be reported.",
+      "type": "array",
+      "fieldtypes": [
+        "identifier"
+      ],
+      "mandatory": true
+    }
+  ]
+}
