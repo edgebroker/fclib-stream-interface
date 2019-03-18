@@ -31,7 +31,7 @@ function handler(message) {
     email.body(body);
     email.send();
 
-    this.exxecuteOutputLink("Out", message);
+    this.executeOutputLink("Out", message);
 
     function replaceAll(str, find, replace) {
         return str.replace(new RegExp(find, 'g'), replace);
