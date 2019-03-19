@@ -1,0 +1,41 @@
+{
+  "description": "Checks known JMS clients of inactivity and maintains configurable threshold state red. Sends a message with the following property set if the state is red: clientlist. It contains a list of JMS clients with the time of last activity. The message is sent to the corresponding outputs dependent on the state.",
+  "links": {
+    "input": [
+      {
+        "name": "Timer",
+        "type": "timer",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "GREEN",
+        "type": "message"
+      },
+      {
+        "name": "RED",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "cidPredicate",
+      "label": "Client Id Predicate",
+      "description": "Provide the predicate to match the client id. This is a SQL LIKE predicate.",
+      "type": "string",
+      "default": "%",
+      "mandatory": true
+    },
+    {
+      "name": "threshold-red",
+      "label": "Red After Minutes",
+      "description": "Provide the number of minutes of inactivity after that a JMS client will turn into red state and reported.",
+      "type": "integer",
+      "min" : 1,
+      "default": 10,
+      "mandatory": true
+    }
+  ]
+}
