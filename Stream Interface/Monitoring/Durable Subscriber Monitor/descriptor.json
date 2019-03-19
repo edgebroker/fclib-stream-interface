@@ -1,5 +1,5 @@
 {
-  "description": "Checks durable subscribers of inactivity and maintains configurable threshold states green, yellow and red. If a durable subscriber turns into red state, it will be deleted. Sends a message with the following property set: durablelist. It contains a list of durable subscribers with the time of last activity. The message is sent to the corresponding outputs dependent on the state.",
+  "description": "Checks durable subscribers of inactivity and maintains configurable threshold states yellow and red. If a durable subscriber turns into red state, it will be deleted. Sends a message with the following property set: durablelist. It contains a list of durable subscribers with the time of last activity. The message is sent to the corresponding outputs dependent on the state.",
   "links": {
     "input": [
       {
