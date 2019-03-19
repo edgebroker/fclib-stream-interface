@@ -1,0 +1,58 @@
+{
+  "description": "Checks durable subscribers of inactivity and maintains configurable threshold states green, yellow and red. If a durable subscriber turns into red state, it will be deleted. Sends a message with the following property set: durablelist. It contains a list of durable subscribers with the time of last activity. The message is sent to the corresponding outputs dependent on the state.",
+  "links": {
+    "input": [
+      {
+        "name": "Timer",
+        "type": "timer",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "YELLOW",
+        "type": "message"
+      },
+      {
+        "name": "RED",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "cidPredicate",
+      "label": "Client Id Predicate",
+      "description": "Provide the predicate to match the client id. This is a SQL LIKE predicate.",
+      "type": "string",
+      "default": "%",
+      "mandatory": true
+    },
+    {
+      "name": "durNamePredicate",
+      "label": "Durable Name Predicate",
+      "description": "Provide the predicate to match the durable subscriber name. This is a SQL LIKE predicate.",
+      "type": "string",
+      "default": "%",
+      "mandatory": true
+    },
+    {
+      "name": "threshold-yellow",
+      "label": "Yellow After Days",
+      "description": "Provide the number of days of inactivity after that a durable subscriber will turn into yellow state.",
+      "type": "integer",
+      "min" : 1,
+      "default": 7,
+      "mandatory": true
+    },
+    {
+      "name": "threshold-red",
+      "label": "Red After Days",
+      "description": "Provide the number of days of inactivity after that a durable subscriber will turn into red state and will be deleted.",
+      "type": "integer",
+      "min" : 1,
+      "default": 3,
+      "mandatory": true
+    }
+  ]
+}
