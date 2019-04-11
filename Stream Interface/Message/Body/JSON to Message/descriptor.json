@@ -1,0 +1,28 @@
+{
+  "description": "Converts a JSON object into a JMS Message.",
+  "refs": {
+    "input": [
+      {
+        "name": "Message",
+        "type": "json",
+        "mandatory": true
+      }
+    ]
+  },
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": []
+}

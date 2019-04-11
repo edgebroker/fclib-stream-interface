@@ -1,0 +1,28 @@
+{
+  "description": "Extracts Message Properties into JSON",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "json"
+      }
+    ]
+  },
+  "refs": {
+    "output": [
+      {
+        "name": "Message",
+        "type": "json",
+        "mandatory": false
+      }
+    ]
+  },
+  "properties": []
+}
