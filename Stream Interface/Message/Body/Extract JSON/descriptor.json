@@ -1,0 +1,33 @@
+{
+  "description": "Extract a property value from a JSON object.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "json",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Success",
+        "type": "json",
+        "mandatory": false
+      },
+      {
+        "name": "Error",
+        "type": "json",
+        "mandatory": false
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "path",
+      "label": "JSON Path",
+      "description": "Provide the JSON path in dot notation starting with '$.'",
+      "type": "jsonpath",
+      "mandatory": true
+    }
+  ]
+}
