@@ -1,4 +1,4 @@
-function handler(In) {
+function handler() {
     var self = this;
     this.setOutputReference("Property", execRef);
 
