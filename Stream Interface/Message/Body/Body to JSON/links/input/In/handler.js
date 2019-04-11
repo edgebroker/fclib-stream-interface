@@ -1,7 +1,7 @@
 function handler(In) {
      var json = JsonFromMessage(In);
      this.executeOutputLink("Out", json);
-     this.setOutputReference("Message", json);
+     this.setOutputReference("Message", getJson);
 
      function JsonFromMessage(In) {
          var result = {};
@@ -12,5 +12,10 @@ function handler(In) {
          });
          return result;
      }
+
+     function getJson(){
+         return json;
+     }
+
 
 }
