@@ -15,5 +15,14 @@
       }
     ]
   },
+  "refs": {
+    "output": [
+      {
+        "name": "Message",
+        "type": "json",
+        "mandatory": false
+      }
+    ]
+  },
   "properties": []
 }
