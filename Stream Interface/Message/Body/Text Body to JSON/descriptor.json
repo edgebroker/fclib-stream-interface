@@ -1,5 +1,5 @@
 {
-  "description": "Extracts Message Properties into JSON",
+  "description": "Parses a Message body as JSON object.",
   "links": {
     "input": [
       {

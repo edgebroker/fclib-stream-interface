@@ -1,0 +1,28 @@
+{
+  "description": "Converts a JSON object into a Text Message body.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "json",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "refs": {
+    "output": [
+      {
+        "name": "Message",
+        "type": "message",
+        "mandatory": false
+      }
+    ]
+  },
+  "properties": []
+}
