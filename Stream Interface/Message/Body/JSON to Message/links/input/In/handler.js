@@ -5,10 +5,6 @@ function handler(In) {
     for (var key in source) {
         outMsg.property(key).set(source[key]);
     }
-
-    outMsg.properties().forEach(function (prop) {
-        stream.log().info(prop.name() + ": " + prop.value().toObject());
-    });
-
+    
     this.executeOutputLink("Out", outMsg);
 }
