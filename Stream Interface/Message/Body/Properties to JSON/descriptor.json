@@ -1,0 +1,49 @@
+{
+  "description": "Extracts Message Properties into JSON",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "json"
+      }
+    ]
+  },
+  "refs": {
+    "output": [
+      {
+        "name": "Message",
+        "type": "json",
+        "mandatory": false
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "properties",
+      "label": "Property Names",
+      "description": "Message properties to retrieve values from.",
+      "type": "array",
+      "fieldtypes": [
+        "identifier"
+      ],
+      "mandatory": true
+    },
+    {
+      "name": "fields",
+      "label": "Fields",
+      "type": "array",
+      "description": "JSON field names to set values to.",
+      "fieldtypes": [
+        "identifier"
+      ],
+      "mandatory": true
+    }
+  ]
+}

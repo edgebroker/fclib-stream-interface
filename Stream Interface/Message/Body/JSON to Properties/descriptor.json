@@ -1,0 +1,49 @@
+{
+  "description": "Converts a JSON object into a JMS Message.",
+  "refs": {
+    "input": [
+      {
+        "name": "Message",
+        "type": "json",
+        "mandatory": true
+      }
+    ]
+  },
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "fields",
+      "label": "Fields",
+      "type": "array",
+      "description": "JSON property fields to retrieve values from.",
+      "fieldtypes": [
+        "identifier"
+      ],
+      "mandatory": true
+    },
+    {
+      "name": "properties",
+      "label": "Property Names",
+      "description": "Corresponding property names to store values from the JSON object.",
+      "type": "array",
+      "fieldtypes": [
+        "identifier"
+      ],
+      "mandatory": true
+    }
+  ]
+}
