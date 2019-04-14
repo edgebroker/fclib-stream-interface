@@ -1,0 +1,45 @@
+{
+  "description": "Copies the selected headers from the referenced into the input message.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "refs": {
+    "input": [
+      {
+        "name": "Message",
+        "type": "message",
+        "mandatory": true
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "copyReplyTo",
+      "label": "Copy Reply To",
+      "description": "Copies the reply to destination.",
+      "type": "boolean",
+      "default": false,
+      "mandatory": true
+    },
+    {
+      "name": "copyCorrelationId",
+      "label": "Copy Correlation Id",
+      "description": "Copies the correlation id.",
+      "type": "boolean",
+      "default": false,
+      "mandatory": true
+    }
+  ]
+}
