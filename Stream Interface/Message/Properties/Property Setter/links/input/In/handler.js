@@ -1,8 +1,8 @@
 function handler(In) {
     var self = this;
     if (!this.refset) {
-        if (this.getInputReference("PropertySet"))
-            this.refset = this.getInputReference("PropertySet")();
+        if (this.getInputReference("Message"))
+            this.refset = this.getInputReference("Message")();
     }
     var outMsg = stream.create().message().copyMessage(In);
 
@@ -26,7 +26,7 @@ function handler(In) {
         if (!self.refset)
             return value;
         var result = value;
-        self.refset.forEach(function(p){
+        self.refset.properties().forEach(function(p){
             result = replaceAll(result, "\\{"+p.name()+"\\}", p.value().toString());
         });
         return result;
