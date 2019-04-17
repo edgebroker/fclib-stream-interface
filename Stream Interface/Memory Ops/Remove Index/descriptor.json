@@ -1,5 +1,5 @@
 {
-  "description": "Removes all messages from the referenced memory that is equal to the referenced property value and returns a result memory.",
+  "description": "Removes all messages from the referenced memory that is equal to the referenced property value.",
   "links": {
     "input": [
       {

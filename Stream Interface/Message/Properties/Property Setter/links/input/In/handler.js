@@ -1,12 +1,10 @@
 function handler(In) {
     var self = this;
-    if (!this.refset) {
-        if (this.getInputReference("Message"))
-            this.refset = this.getInputReference("Message")();
-    }
+    if (this.getInputReference("Message"))
+        this.refset = this.getInputReference("Message")();
     var outMsg = stream.create().message().copyMessage(In);
 
-    for (var i=0;i<this.properties.length;i++){
+    for (var i = 0; i < this.properties.length; i++) {
         if (this.values[i] === '[null]')
             outMsg.property(this.properties[i]).set(null);
         else
@@ -15,19 +13,19 @@ function handler(In) {
 
     this.executeOutputLink("Out", outMsg);
 
-    function subSystemTags(value){
+    function subSystemTags(value) {
         var result = value;
         if (result.indexOf("[time]") !== -1)
-            result = replaceAll(result, "\\[time\\]", time.currentTime()+"");
+            result = replaceAll(result, "\\[time\\]", time.currentTime() + "");
         return result;
     }
 
-    function subRefProps(value){
+    function subRefProps(value) {
         if (!self.refset)
             return value;
         var result = value;
-        self.refset.properties().forEach(function(p){
-            result = replaceAll(result, "\\{"+p.name()+"\\}", p.value().toString());
+        self.refset.properties().forEach(function (p) {
+            result = replaceAll(result, "\\{" + p.name() + "\\}", p.value().toString());
         });
         return result;
     }
@@ -36,9 +34,9 @@ function handler(In) {
         return str.replace(new RegExp(find, 'g'), replace);
     }
 
-    function convert(value, type){
+    function convert(value, type) {
         var result;
-        switch (type){
+        switch (type) {
             case 'boolean':
                 result = new self.BOOLEAN(value);
                 break;

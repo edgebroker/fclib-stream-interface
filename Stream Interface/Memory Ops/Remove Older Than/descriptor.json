@@ -1,5 +1,5 @@
 {
-  "description": "Remoces all messages from the referenced memory that is older than the given time and returns a result memory.",
+  "description": "Removes all messages from the referenced memory that is older than the given time and returns the referenced memory.",
   "links": {
     "input": [
       {
@@ -9,7 +9,7 @@
     ],
     "output": [
       {
-        "name": "Result",
+        "name": "Out",
         "type": "memory"
       }
     ]

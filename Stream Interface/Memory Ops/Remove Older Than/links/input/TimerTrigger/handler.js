@@ -1,7 +1,7 @@
 function handler(MessageTrigger) {
     var self = this;
     var mem = this.getInputReference("Memory")();
-    this.executeOutputLink("Result", mem.removeOlderThan(time.currentTime()-getTime()));
+    this.executeOutputLink("Out", mem.removeOlderThan(time.currentTime()-getTime()));
 
     function getTime(){
         var t = self.props["milliseconds"];
