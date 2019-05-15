@@ -3,7 +3,7 @@ function handler(In) {
     var fields = this.props["fields"];
     var properties = this.props["properties"];
 
-    var source = this.getInputReference("Message")();
+    var source = this.getInputReference("JSON")();
 
     fields.forEach(function(field, index) {
         var name = properties[index];

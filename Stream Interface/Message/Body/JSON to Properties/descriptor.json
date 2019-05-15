@@ -3,7 +3,7 @@
   "refs": {
     "input": [
       {
-        "name": "Message",
+        "name": "JSON",
         "type": "json",
         "mandatory": true
       }

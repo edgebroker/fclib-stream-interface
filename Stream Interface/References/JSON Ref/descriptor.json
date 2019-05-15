@@ -1,0 +1,28 @@
+{
+  "description": "Turns an input JSON into a reference that can be used later. That way, any intermediate result can be used in other parts of the flow.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "json"
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "json"
+      }
+    ]
+  },
+  "refs": {
+    "output": [
+      {
+        "name": "JSON",
+        "type": "json",
+        "mandatory": false
+      }
+    ]
+  },
+  "properties": [
+  ]
+}
