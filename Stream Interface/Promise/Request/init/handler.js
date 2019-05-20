@@ -32,7 +32,7 @@ function handler() {
 
     this.getUUID = function(){
         var uuid = stream.fullyQualifiedName()+"-"+self.compid+"-"+(self.seqNumber++);
-        if (seqNumber = Number.MAX_VALUE)
+        if (seqNumber === Number.MAX_VALUE)
             seqNumber = 0;
         return uuid;
     }
