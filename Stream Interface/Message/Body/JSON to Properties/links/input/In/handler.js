@@ -5,10 +5,10 @@ function handler(In) {
 
     var source = this.getInputReference("JSON")();
 
-    fields.forEach(function(field, index) {
-        var name = properties[index];
-        In.property(name).set(source[field]);
-    });
+    for(var i = 0; i < fields.length; i++){
+        var name = properties[i];
+        In.property(name).set(source[fields][i]);
+    }
 
     this.executeOutputLink("Out", In);
 }

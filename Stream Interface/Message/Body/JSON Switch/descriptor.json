@@ -1,0 +1,28 @@
+{
+  "description": "Switch with one input and multiple outputs (value dependent). This component actually creates a 'switch' statement with 'cases'.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "json",
+        "mandatory": true
+      }
+    ],
+    "outputdepend": {
+      "name": "properties",
+      "type": "json"
+    }
+  },
+  "properties": [
+    {
+      "name": "properties",
+      "label": "Properties",
+      "description": "Provide the names of the properties in the message which should be verified.",
+      "type": "array",
+      "fieldtypes": [
+        "string"
+      ],
+      "mandatory": true
+    }
+  ]
+}
