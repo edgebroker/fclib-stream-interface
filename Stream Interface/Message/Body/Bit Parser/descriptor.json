@@ -28,6 +28,7 @@
       "label": "Bit Properties",
       "description": "Specify the properties that the parsed bits should be stored in.",
       "type": "table",
+      "mandatory": true,
       "tablefields": {
         "name": {
           "label": "Result Property Names",
