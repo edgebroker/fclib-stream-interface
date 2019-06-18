@@ -1,13 +1,12 @@
 function handler(In) {
 
-    var fields = this.props["fields"];
     var properties = this.props["properties"];
-
     var source = this.getInputReference("JSON")();
 
-    fields.forEach(function(field, index) {
-        var name = properties[index];
-        In.property(name).set(source[field]);
+    properties.forEach(function(property) {
+    	var name = property["name"].value;
+    	var field = property["field"].value;
+    	In.property(name).set(source[field]);
     });
 
     this.executeOutputLink("Out", In);
