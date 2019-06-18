@@ -36,7 +36,7 @@
           "name": "name",
           "label": "Name",
           "description": "Provide the name of the property to store the value as.",
-          "type": "string",
+          "type": "identifier",
           "mandatory": true
         },
         {

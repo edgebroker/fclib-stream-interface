@@ -1,14 +1,21 @@
 function handler(In) {
+
     var self = this;
+
     if (this.getInputReference("Message"))
         this.refset = this.getInputReference("Message")();
     var outMsg = stream.create().message().copyMessage(In);
 
     for (var i = 0; i < this.properties.length; i++) {
-        if (this.values[i] === '[null]')
-            outMsg.property(this.properties[i]).set(null);
+        
+        var name = this.properties["name"].value;
+        var type = this.properties["type"].value;
+        var value = this.properties["value"].value;
+
+        if (value === '[null]')
+            outMsg.property(name).set(null);
         else
-            outMsg.property(this.properties[i]).set(convert(subSystemTags(subRefProps(this.values[i])), this.types[i]));
+            outMsg.property(name).set(convert(subSystemTags(subRefProps(value)), type));
     }
 
     this.executeOutputLink("Out", outMsg);
