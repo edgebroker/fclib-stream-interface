@@ -1,11 +1,14 @@
 function handler(In) {
+
+    var fields = this.props["fields"];
     var self = this;
     var extracted = extractValues(In);
     for (var i = 0; i < extracted.max; i++) {
         var outMsg = stream.create().message().copyMessage(In);
-        for (var j = 0; j < this.props["names"].length; j++) {
-            outMsg.property(this.props["names"][j]).set(extracted.values[j][i]);
-        }
+        for (var j = 0; j < fields.length; j++) {
+            var name = fields[j].name;            
+            outMsg.property(name).set(extracted.values[j][i]);
+        }    
         this.executeOutputLink("Out", outMsg);
     }
 
@@ -27,8 +30,9 @@ function handler(In) {
                 default:
                     break;
             }
-            for (var i = 0; i < self.props["paths"].length; i++) {
-                var result = transform.selectJSON(self.props["paths"][i]);
+            for (var i = 0; i < fields.length; i++) {
+                var path = fields[i]["path"];
+                var result = transform.selectJSON(path);
                 var val = [];
                 for (var j = 0; j < result.size(); j++) {
                     val[j] = result.get(j);

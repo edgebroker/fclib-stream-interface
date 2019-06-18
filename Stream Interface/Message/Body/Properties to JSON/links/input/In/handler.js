@@ -1,21 +1,16 @@
 function handler(In) {
 
-    var fields = this.props["fields"];
     var properties = this.props["properties"];
-
     this.json = JsonFromMessage(In);
-
     this.executeOutputLink("Out", this.json);
 
     function JsonFromMessage(In) {
         var result = {};
-
-        for(var i = 0; i < fields.length; i ++) {
-            var field = fields[i];
-            var name = properties[i];
-            result[field] = In.property(name).value().toObject();
+        for(var i = 0; i < properties.length; i ++) {
+            var key = properties[i]["key"];
+            var name = properties[i]["name"];
+            result[key] = In.property(name).value().toObject();
         }
-
         return result;
     }
 

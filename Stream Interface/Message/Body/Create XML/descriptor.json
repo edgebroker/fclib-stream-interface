@@ -33,23 +33,24 @@
       "mandatory": true
     },
     {
-      "name": "rootattr",
-      "label": "Root XML Attribute Names",
-      "description": "Provide the XML attribute names of the root XML tag.",
-      "type": "array",
-      "fieldtypes": [
-        "string"
-      ],
-      "mandatory": true
-    },
-    {
-      "name": "rootprops",
-      "label": "Root Property Names",
-      "type": "array",
-      "description": "Provide the names of the properties that provide the values of the corresponding root XML attributes.",
-      "fieldtypes": [
-        "identifier"
-      ],
+      "name": "rootattributes",
+      "label": "Root Attributes",
+      "description": "Provide the root XML attributes.",
+      "type": "table",
+      "tablefields": {
+        "name": {
+            "label": "Root XML Attribute Name",
+            "description": "Provide the XML attribute name for the root XML tag.",
+            "type": "string",
+            "mandatory": true
+        },
+        "property": {
+          "label": "Property Name",
+          "description": "Provide the name of the property that provides the value.",
+          "type": "identifier",
+          "mandatory": true
+        }
+      },
       "mandatory": true
     },
     {
@@ -60,24 +61,25 @@
       "mandatory": true
     },
     {
-      "name": "eleattr",
-      "label": "Element XML Attribute Names",
-      "description": "Provide the XML attribute names of the element XML tag.",
-      "type": "array",
-      "fieldtypes": [
-        "string"
-      ],
-      "mandatory": true
-    },
-    {
-      "name": "eleprops",
-      "label": "Element Property Names",
-      "type": "array",
-      "description": "Provide the names of the properties that provide the values of the corresponding element XML attributes.",
-      "fieldtypes": [
-        "identifier"
-      ],
-      "mandatory": true
+      "name": "childattributes",
+      "label": "XML Elements",
+      "description": "Provide the XML attributes for the element XML tag.",
+      "type": "table",
+      "mandatory": true,
+      "tablefields": {
+          "name": {
+            "label": "Element XML Attribute Name",
+            "description": "Provide the name of the XML tag attribute.",
+            "type": "string",
+            "mandatory": true
+          },
+          "property": {
+            "label": "Property Name",
+            "description": "Provide the name of the property that provides the value.",
+            "type": "identifier",
+            "mandatory": true
+          }          
+      }
     }
   ]
 }

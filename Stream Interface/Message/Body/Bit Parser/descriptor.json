@@ -24,34 +24,31 @@
       "mandatory": true
     },
     {
-      "name": "bit_startpos",
-      "label": "Bit Start Position",
-      "description": "Provides the bit start position.",
-      "type": "array",
-      "fieldtypes": [
-        "integer"
-      ],
-      "mandatory": true
-    },
-    {
-      "name": "bit_length",
-      "label": "Length in Bits",
-      "description": "Provides the length of the property in bits.",
-      "type": "array",
-      "fieldtypes": [
-        "integer"
-      ],
-      "mandatory": true
-    },
-    {
       "name": "properties",
-      "label": "Result Property Names",
-      "description": "Provide the resulting property names that are set in the message with the extracted and converted values.",
-      "type": "array",
-      "fieldtypes": [
-        "string"
-      ],
-      "mandatory": true
+      "label": "Bit Properties",
+      "description": "Specify the properties that the parsed bits should be stored in.",
+      "type": "table",
+      "mandatory": true,
+      "tablefields": {
+        "name": {
+          "label": "Result Property Names",
+          "description": "Provide the resulting property names that are set in the message with the extracted and converted values.",
+          "type": "string",
+          "mandatory": true
+        },
+        "bit_startpos": {
+          "label": "Bit Start Position",
+          "description": "Provides the bit start position.",
+          "type": "integer",
+          "mandatory": true
+        },
+        "bit_length": {
+          "label": "Length in Bits",
+          "description": "Provides the length of the property in bits.",
+          "type": "integer",
+          "mandatory": true
+        }    
+      }
     }
   ]
 }

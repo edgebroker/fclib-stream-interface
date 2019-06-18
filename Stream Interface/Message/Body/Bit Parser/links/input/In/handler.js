@@ -1,8 +1,6 @@
 function handler(In) {
     this.assertProperty(In, 'value');
-    var bit_startpos = this.props["bit_startpos"];
     var properties = this.props["properties"];
-    var bit_length = this.props["bit_length"];
     var input_bits = this.props["input_bits"];
 
     //process variables
@@ -25,19 +23,24 @@ function handler(In) {
     testdata_bitstr = temp;
 
     //Assign bits
-    for(var i = 0; i<bit_startpos.length; i++){
-        if(bit_length[i] > 1){
-            lower = bit_startpos[i];
-            upper = Number(bit_startpos[i])+Number(bit_length[i]);
+    for(var i = 0; i<properties.length; i++){
+
+        var name = properties[i]["name"];
+        var bitLength = properties[i]["bit_length"];
+        var bitStartPos = properties[i]["bit_startpos"];
+
+        if(bitLength > 1){
+            lower = bitStartPos;
+            upper = Number(bitStartPos)+Number(bitLength);
             temp = testdata_bitstr.slice(lower, upper);
             temp = getInt(temp);
             extr_bits.push(temp);
         }else{
-            temp = testdata_bitstr[bit_startpos[i]];
+            temp = testdata_bitstr[bitStartPos];
             temp = getBoolean(temp);
             extr_bits.push(temp);
         }
-        In.property(properties[i]).set(extr_bits[i]);
+        In.property(name).set(extr_bits[i]);
     }
 
     //Generate outputs

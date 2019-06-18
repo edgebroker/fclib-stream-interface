@@ -2,25 +2,30 @@ function handler(In) {
     var self = this;
     var rootMsg = self.getInputReference("Root")();
     var body = "<"+self.props["roottag"];
-    var rootAttr = self.props["rootattr"];
-    var rootProps = self.props["rootprops"];
-    for (var i=0;i<rootAttr.length;i++){
+    var rootAttributes = self.props["rootattributes"];
+    var childAttributes = self.props["childattributes"];
+
+    for (var i=0;i<rootAttributes.length;i++){
         var value = "";
-        body += " "+rootAttr[i]+"=\"";
-        if (rootMsg.property(rootProps[i]).exists())
-            body += rootMsg.property(rootProps[i]).value().toString();
+        var name = rootAttributes[i]["name"];
+        var propertyName = rootAttributes[i]["property"];
+
+        body += " "+name+"=\"";
+        if (rootMsg.property(propertyName).exists())
+            body += rootMsg.property(propertyName).value().toString();
         body += "\"";
     }
     body += ">\n";
-    var eleAttr = self.props["eleattr"];
-    var eleProps = self.props["eleprops"];
+
     In.forEach(function(msg){
        body += "  <"+self.props["eletag"];
-        for (var i=0;i<eleAttr.length;i++){
+        for (var i=0;i<childAttributes.length;i++){            
             var value = "";
-            body += " "+eleAttr[i]+"=\"";
-            if (msg.property(eleProps[i]).exists())
-                body += msg.property(eleProps[i]).value().toString();
+            var name = childAttributes[i]["name"];
+            var propertyName = childAttributes[i]["property"];            
+            body += " "+name+"=\"";
+            if (msg.property(propertyName).exists())
+                body += msg.property(propertyName).value().toString();
             body += "\"";
         }
         body += "/>\n";
