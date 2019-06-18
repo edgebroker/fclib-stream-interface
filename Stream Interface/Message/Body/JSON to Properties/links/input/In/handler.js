@@ -4,8 +4,8 @@ function handler(In) {
     var source = this.getInputReference("JSON")();
 
     properties.forEach(function(property) {
-    	var name = property["name"].value;
-    	var field = property["field"].value;
+    	var name = property["name"];
+    	var field = property["field"];
     	In.property(name).set(source[field]);
     });
 

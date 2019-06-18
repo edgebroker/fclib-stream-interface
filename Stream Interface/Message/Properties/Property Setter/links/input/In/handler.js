@@ -8,9 +8,9 @@ function handler(In) {
 
     for (var i = 0; i < this.properties.length; i++) {
         
-        var name = this.properties["name"].value;
-        var type = this.properties["type"].value;
-        var value = this.properties["value"].value;
+        var name = this.properties[i]["name"];
+        var type = this.properties[i]["type"];
+        var value = this.properties[i]["value"];
 
         if (value === '[null]')
             outMsg.property(name).set(null);

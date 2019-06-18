@@ -7,9 +7,9 @@ function handler(In) {
         throw "Incoming message is not a map message";
 
     for (var i=0;i<this.keys.length;i++){
-        var name = this.keys[i]["name"].value;
-        var value = this.keys[i]["value"].value
-        var type = this.keys[i]["type"].value
+        var name = this.keys[i]["name"];
+        var value = this.keys[i]["value"];
+        var type = this.keys[i]["type"];
         In.body().set(name, convert(subSystemTags(props(In, this.flowcontext.substitute(value))), type));
     }    
 

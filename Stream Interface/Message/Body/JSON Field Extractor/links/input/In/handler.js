@@ -6,7 +6,7 @@ function handler(In) {
     for (var i = 0; i < extracted.max; i++) {
         var outMsg = stream.create().message().copyMessage(In);
         for (var j = 0; j < fields.length; j++) {
-            var name = fields[j].name.value;            
+            var name = fields[j].name;            
             outMsg.property(name).set(extracted.values[j][i]);
         }    
         this.executeOutputLink("Out", outMsg);
@@ -31,7 +31,7 @@ function handler(In) {
                     break;
             }
             for (var i = 0; i < fields.length; i++) {
-                var path = fields[i].path.value;
+                var path = fields[i]["path"];
                 var result = transform.selectJSON(path);
                 var val = [];
                 for (var j = 0; j < result.size(); j++) {
