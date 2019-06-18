@@ -49,10 +49,10 @@
           "description": "Provide the name of the property that provides the value.",
           "type": "identifier",
           "mandatory": true
-        },
+        }
       },
       "mandatory": true
-    }
+    },
     {
       "name": "eletag",
       "label": "Element XML Tag",
