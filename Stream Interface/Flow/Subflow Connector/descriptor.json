@@ -1,6 +1,14 @@
 {
   "description": "Provides connector if this flow is used as a sub flow. All information (links, references) passed between this subflow and the embedding flow are passed through these components.",
+  "labelproperty": "name",
   "properties": [
+    {
+      "name": "name",
+      "label": "Name",
+      "description": "Provide a unique name for this connector.",
+      "mandatory": true,
+      "type": "string"
+    },
     {
       "name": "connectortype",
       "label": "Connector Type",
