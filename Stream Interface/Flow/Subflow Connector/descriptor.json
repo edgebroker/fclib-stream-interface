@@ -29,6 +29,14 @@
         "Output"
       ],
       "mandatory": true
+    },
+    {
+      "name": "mandatory",
+      "label": "Mandatory",
+      "description": "Check if the connector must be connected.",
+      "type": "boolean",
+      "default": false,
+      "mandatory": true
     }
   ]
 }
