@@ -1,0 +1,12 @@
+{
+  "description": "Add a subflow to this flow.",
+  "properties": [
+    {
+      "name": "flow",
+      "label": "Flow",
+      "description": "Select a flow to include as a subflow.",
+      "mandatory": true,
+      "type": "flow"
+    }
+  ]
+}
