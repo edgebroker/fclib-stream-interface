@@ -7,7 +7,7 @@
       "label": "Name",
       "description": "Provide a unique name for this connector.",
       "mandatory": true,
-      "type": "string"
+      "type": "connectorname"
     },
     {
       "name": "connectortype",
