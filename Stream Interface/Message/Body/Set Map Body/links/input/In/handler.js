@@ -10,7 +10,7 @@ function handler(In) {
         var name = this.keys[i]["name"];
         var value = this.keys[i]["value"];
         var type = this.keys[i]["type"];
-        In.body().set(name, convert(subSystemTags(props(In, this.flowcontext.substitute(value))), type));
+        In.body().set(name, convert(subSystemTags(props(In, this.substitute(value))), type));
     }    
 
     this.executeOutputLink("Out", In);
