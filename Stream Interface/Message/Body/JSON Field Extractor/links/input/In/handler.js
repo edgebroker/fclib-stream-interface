@@ -25,8 +25,9 @@ function handler(In) {
             return null;
         }
 
-        return pathArray.reduce(function (acc, i) {
-            if (i === "$") {
+        return pathArray.reduce(function (acc, i, index) {
+            var isStartPlaceholder = index === 0 && i === "$";
+            if (isStartPlaceholder) {
                 return acc;
             }
             if (acc) {
