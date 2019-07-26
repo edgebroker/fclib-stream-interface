@@ -20,7 +20,7 @@
       {
         "name": "Message",
         "type": "message",
-        "mandatory": false
+        "mandatory": true
       }
     ]
   },
