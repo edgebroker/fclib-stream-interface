@@ -1,0 +1,27 @@
+{
+  "description": "Calls the message depending on the integer value of a property.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "property",
+      "label": "Property",
+      "description": "Provide the name of the property which contains the count of the loop.",
+      "type": "identifier",
+      "mandatory": true
+    }
+  ]
+}
