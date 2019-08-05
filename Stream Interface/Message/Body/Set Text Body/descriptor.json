@@ -19,7 +19,7 @@
     {
       "name": "body",
       "label": "Body",
-      "description": "Specify the text body template. Properties of the incoming message can be referenced by {propertyname}, flow parameters by {{parametername}}.",
+      "description": "Specify the text body template. Include the text body of the incoming message by referencing {body}. Properties of the incoming message can be referenced by {propertyname}, flow parameters by {{parametername}}.",
       "type": "json",
       "mandatory": true
     }
