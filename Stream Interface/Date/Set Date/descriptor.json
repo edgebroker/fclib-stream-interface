@@ -1,0 +1,48 @@
+{
+  "description": "Adds or subtracts a number of days to an existing date.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "year",
+      "label": "Year",
+      "description": "Provide the year of the date.",
+      "type": "integer",
+      "mandatory": true
+    },
+    {
+      "name": "month",
+      "label": "Month",
+      "description": "Provide the month of the date.",
+      "type": "integer",
+      "mandatory": true
+    },
+    {
+      "name": "day",
+      "label": "Day",
+      "description": "Provide the day of the date.",
+      "type": "integer",
+      "mandatory": true
+    },
+    {
+      "name": "outprop",
+      "label": "Output Property",
+      "description": "Provide the name of the output property which contains the date.",
+      "type": "identifier",
+      "mandatory": true
+    }
+  ]
+}
