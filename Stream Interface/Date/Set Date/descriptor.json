@@ -38,6 +38,13 @@
       "mandatory": true
     },
     {
+      "name": "today",
+      "label": "Today",
+      "description": "Check if you want to set todays date",
+      "type": "boolean",
+      "mandatory": true
+    },
+    {
       "name": "outprop",
       "label": "Output Property",
       "description": "Provide the name of the output property which contains the date.",

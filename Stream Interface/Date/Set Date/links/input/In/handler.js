@@ -3,9 +3,17 @@ function handler(In) {
     var month = this.props["month"];
     var day = this.props["day"];
     var out = this.props["outprop"];
+    var today = this.props["today"];
+    var date;
+    var newdate;
 
-    var date = new Date(year, month, day);
-    var newdate = date.toISOString().slice(0,10);
+    if(today){
+        date = new Date;
+        newdate = date.toISOString().slice(0,10);
+    }else{
+        date = new Date(year, month, day);
+        newdate = date.toISOString().slice(0,10);
+    }
 
     In.property(out).set(newdate);
 
