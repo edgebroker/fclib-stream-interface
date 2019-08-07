@@ -1,5 +1,5 @@
 {
-  "description": "Converts a JSON object into a JMS Message.",
+  "description": "Renames existing keys in JSON.",
   "refs": {
     "input": [
       {
