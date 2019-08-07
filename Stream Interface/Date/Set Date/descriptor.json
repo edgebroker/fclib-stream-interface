@@ -21,28 +21,21 @@
       "label": "Year",
       "description": "Provide the year of the date.",
       "type": "integer",
-      "mandatory": false
+      "mandatory": true
     },
     {
       "name": "month",
       "label": "Month",
       "description": "Provide the month of the date.",
       "type": "integer",
-      "mandatory": false
+      "mandatory": true
     },
     {
       "name": "day",
       "label": "Day",
       "description": "Provide the day of the date.",
       "type": "integer",
-      "mandatory": false
-    },
-    {
-      "name": "today",
-      "label": "Today",
-      "description": "Check box to set todays date as property.",
-      "type": "boolean",
-      "mandatory": false
+      "mandatory": true
     },
     {
       "name": "outprop",
