@@ -5,7 +5,7 @@ function handler(In) {
 
     for(var i = 0; i < replacefields.length; i ++) {
         var str = JSON.stringify(json);
-        str = str.replace(eplacefields[i]["currentname"], replacefields[i]["newname"]);
+        str = str.replace(replacefields[i]["currentname"], replacefields[i]["newname"]);
         json = JSON.parse(str);
     }
 
