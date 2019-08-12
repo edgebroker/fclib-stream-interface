@@ -4,7 +4,7 @@ function handler(In) {
     var outMsg = stream.create().message().copyMessage(In);
 
     refMessage.properties().forEach(function (refProp) {
-        outMsg.property(refProp.name()).set(refProp.value().toString());
+        outMsg.property(refProp.name()).set(refProp.value().toObject());
     });
 
     this.executeOutputLink("Out", outMsg);
