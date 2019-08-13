@@ -28,7 +28,10 @@ function handler(In) {
 
     });
 
-    body = body.substring(0, body.length - 1);
+    var hasValues = In.size() > 0;
+    if (hasValues) {
+        body = body.substring(0, body.length - 1);
+    }
 
     body += "]";
 
