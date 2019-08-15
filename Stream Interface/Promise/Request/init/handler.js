@@ -5,14 +5,14 @@ function handler() {
     stream.create().input(stream.create().tempQueue(self.compid+"-reply")).queue().onInput(function(input){
         var correlationId = input.current().correlationId();
         if (!correlationId || correlationId === null)
-            this.executeOutputLink("Invalid", input.current());
+            self.executeOutputLink("Invalid", input.current());
         else {
-            var mem = stream.memory(this.compid+"-requests").index("_correlationid").get(correlationId);
+            var mem = stream.memory(self.compid+"-requests").index("_correlationid").get(correlationId);
             if (mem.size() === 0)
-                this.executeOutputLink("Invalid", input.current());
+                self.executeOutputLink("Invalid", input.current());
             else {
-                stream.memory(this.compid+"-requests").index("_correlationid").remove(correlationId);
-                this.executeOutputLink("Reply", input.current());
+                stream.memory(self.compid+"-requests").index("_correlationid").remove(correlationId);
+                self.executeOutputLink("Reply", input.current());
             }
         }
 
