@@ -23,9 +23,9 @@ function handler(message) {
     var email = this.getInputReference("MailServer")().email();
     email.from(from);
     email.to(to);
-    if (cc)
+    if (cc && cc.indexOf('{') === -1)
         email.cc(cc);
-    if (bcc)
+    if (bcc && bcc.indexOf('{') === -1)
         email.bcc(bcc);
     email.subject(subject);
     email.body(body);
