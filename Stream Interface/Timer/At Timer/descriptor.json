@@ -4,7 +4,8 @@
     "output": [
       {
         "name": "onTimer",
-        "type": "timer"
+        "type": "timer",
+        "eventroot": true
       }
     ]
   },
