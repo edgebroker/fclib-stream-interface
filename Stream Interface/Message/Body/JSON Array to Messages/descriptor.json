@@ -1,0 +1,19 @@
+{
+  "description": "Takes an array of JSON objects, and sends a message per object with the key-values as properties.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "ForEach",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": []
+}
