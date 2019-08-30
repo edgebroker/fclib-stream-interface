@@ -4,5 +4,5 @@ function handler(In) {
     In.properties().forEach(function(prop){
        In.body().set(prop.name(), prop.value().toObject());
     });
-    this.executeOutputLink("Out", out);
+    this.executeOutputLink("Out", In);
 }
