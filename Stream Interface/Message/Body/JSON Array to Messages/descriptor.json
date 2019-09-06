@@ -1,5 +1,5 @@
 {
-  "description": "Takes an array of JSON objects, and sends a message per object with the key-values as properties.",
+  "description": "Takes a text message with a stringified JSON as body which must be a JSON array, iterates over the array and sends a message per entry with the key-values of the object as properties.",
   "links": {
     "input": [
       {
