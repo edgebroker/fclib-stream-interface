@@ -15,5 +15,14 @@
       }
     ]
   },
-  "properties": []
+  "properties": [
+    {
+      "name": "propname",
+      "label": "Property Name",
+      "description": "If the JSON array doesn't contain a JSON object but a single value, specify the property name of the resulting message where the value is set.",
+      "type": "string",
+      "mandatory": false
+    }
+
+  ]
 }
