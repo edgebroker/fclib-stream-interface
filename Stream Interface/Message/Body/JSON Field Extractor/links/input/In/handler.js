@@ -25,7 +25,7 @@ function handler(In) {
             return null;
         }
 
-        return pathArray.reduce(function (acc, i, index) {
+        var value = pathArray.reduce(function (acc, i, index) {
             var isStartPlaceholder = index === 0 && i === "$";
             if (isStartPlaceholder) {
                 return acc;
@@ -34,6 +34,13 @@ function handler(In) {
                 return acc[i];
             }
         }, jsonMessage);
+
+        var shouldStringify = value && typeof value === "object";
+        if (shouldStringify) {
+            value = JSON.stringify(value);
+        }
+
+        return value;
     }
 
     function bodyAsStringFrom(message) {

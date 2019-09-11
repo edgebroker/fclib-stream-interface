@@ -15,6 +15,12 @@ function handler(In) {
                 Object.keys(item).forEach(function (key) {
                     var propName = key.replace('-', '_').replace(/[!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/, '');
                     var value = item[key];
+
+                    var shouldStringify = value && typeof value === "object";
+                    if (shouldStringify) {
+                        value = JSON.stringify(value);
+                    }
+
                     resultMessage.property(propName).set(value);
                 });
             } else {
