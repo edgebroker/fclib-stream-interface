@@ -1,5 +1,5 @@
 {
-  "description": "Adds or subtracts a number of years to an existing date.",
+  "description": "Adds or subtracts a number of years to an existing date provided from a property.",
   "links": {
     "input": [
       {

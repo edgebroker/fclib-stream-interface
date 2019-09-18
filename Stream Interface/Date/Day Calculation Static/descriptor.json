@@ -27,7 +27,7 @@
       "name": "days",
       "label": "Days",
       "description": "Provide the number of days which should be added to the date. Enter a negative number for subtraction.",
-      "type": "identifier",
+      "type": "integer",
       "mandatory": true
     },
     {

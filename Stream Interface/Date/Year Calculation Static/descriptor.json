@@ -27,7 +27,7 @@
       "name": "year",
       "label": "Years",
       "description": "Provide the number of years which should be added to the date. Enter a negative number for subtraction.",
-      "type": "identifier",
+      "type": "integer",
       "mandatory": true
     },
     {
