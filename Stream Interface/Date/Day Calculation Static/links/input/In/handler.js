@@ -4,6 +4,7 @@ function handler(In) {
     var days = this.props["days"];
     var out = this.props["outprop"];
 
+    date = new Date(date);
     date.setDate(date.getDate() + days);
     var newdate = date.toISOString().slice(0,10);
 
