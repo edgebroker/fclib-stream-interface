@@ -4,6 +4,7 @@ function handler(In) {
     var month = In.property(this.props["month"]).value().toInteger();
     var out = this.props["outprop"];
 
+    date = new Date(date);
     date.setDate(date.getMonth() + month);
     var newdate = date.toISOString().slice(0,10);
 

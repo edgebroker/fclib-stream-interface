@@ -4,6 +4,7 @@ function handler(In) {
     var year = this.props["year"];
     var out = this.props["outprop"];
 
+    date = new Date(date);
     date.setFullYear(date.getFullYear() + year);
     var newdate = date.toISOString().slice(0,10);
 
