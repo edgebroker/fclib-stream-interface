@@ -18,7 +18,7 @@
   "refs": {
     "input": [
       {
-        "name": "In",
+        "name": "Memory",
         "type": "memory",
         "mandatory": true
       }
