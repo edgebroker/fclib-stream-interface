@@ -1,0 +1,28 @@
+{
+  "description": "Sends a message to a topic whose name is specified through a property of the incoming message.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message",
+        "mandatory": false
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "topicnameprop",
+      "label": "Topic Name Property",
+      "description": "Provide the name of the property that contains the name of the topic to send to.",
+      "type": "string",
+      "mandatory": true
+    }
+  ]
+}
