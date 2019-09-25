@@ -1,30 +1,20 @@
 function handler(source) {
-
     var path = this.props["path"];  //$.some.path
     var pathsArray = path.split(".");
-    pathsArray.shift(); // Remove beginning '$'
 
-    var value = source;
-    var missingProp = false;
-
-    for(var i = 0; i < pathsArray.length; i ++) {
-        if(!missingProp) {
-            try {
-                value = value[pathsArray[i]];
-            } catch (err) {
-                missingProp = true
-            }
+    var value = pathsArray.reduce(function (acc, i, index) {
+        var isStartPlaceholder = index === 0 && i === "$";
+        if (isStartPlaceholder) {
+            return acc;
         }
-    }
+        if (acc) {
+            return acc[i];
+        }
+    }, source);
 
-    if (missingProp) {
-        stream.log().info("Missing Property at path: " + path);
-        stream.log().info(JSON.stringify(source));
+    if (value === undefined) {
         this.executeOutputLink("Error", source);
     } else {
-        stream.log().info("Extracted Property");
-        stream.log().info(JSON.stringify(value));
         this.executeOutputLink("Success", value);
     }
-
 }
