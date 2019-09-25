@@ -1,8 +1,8 @@
 function handler(In) {
     this.assertProperty(In, this.props["queuenameprop"]);
     var queueName = In.property(this.props["queuenameprop"]).value().toString();
-    stream.create().output(queueName).queue();
+    if (stream.output(queueName) === null)
+        stream.create().output(queueName).queue();
     stream.output(queueName).send(In);
-    stream.output(queueName).close();
     this.executeOutputLink("Out", In);
 }

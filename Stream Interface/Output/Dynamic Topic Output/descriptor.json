@@ -1,5 +1,5 @@
 {
-  "description": "Sends a message to a topic whose name is specified through a property of the incoming message.",
+  "description": "Sends a message to a topic whose name is specified through a property of the incoming message. By using this component you might create a lot of outputs. Please use the Purge Output component to purge unused outputs.",
   "links": {
     "input": [
       {
