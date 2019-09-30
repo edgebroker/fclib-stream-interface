@@ -7,18 +7,18 @@ function handler(In) {
     var date;
     var newdate;
 
-    if(month.toString().length === 1){
-        month = "0"+month;
-    }
-
-    if(day.toString().length === 1){
-        day = "0"+day;
-    }
-
     if(today){
         date = new Date;
         newdate = date.toISOString().slice(0,10);
     }else{
+        if(month.toString().length === 1){
+            month = "0"+month;
+        }
+
+        if(day.toString().length === 1){
+            day = "0"+day;
+        }
+
         newdate = year.toString() + "-" + month.toString() + "-" + day.toString();
     }
 
