@@ -42,8 +42,16 @@
         {
           "name": "type",
           "label": "Type",
-          "description": "Provide the property value type. Possible types are 'boolean', 'string', 'integer', 'long', 'double', 'float'.",
-          "type": "string",
+          "description": "Provide the property value type.",
+          "type": "choice",
+          "choice": [
+            "boolean",
+            "string",
+            "integer",
+            "long",
+            "double",
+            "float"
+          ],
           "mandatory": true
         },
         {

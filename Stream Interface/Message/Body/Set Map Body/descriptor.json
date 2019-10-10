@@ -34,9 +34,17 @@
         {
           "name": "type",
           "label": "Type",
-          "description": "Provide the value type. Possible types are 'boolean', 'string', 'integer', 'long', 'double', 'float'.",
-          "mandatory": true,
-          "type": "string"
+          "description": "Provide the property value type.",
+          "type": "choice",
+          "choice": [
+            "boolean",
+            "string",
+            "integer",
+            "long",
+            "double",
+            "float"
+          ],
+          "mandatory": true
         },
         {
           "name": "value",
@@ -44,7 +52,7 @@
           "description": "Provide the key value. Either enter a static value or use {propertyname} to use a property value of the referenced message or use {{flowparameter}} to set a flow parameter value. To set the current time in milliseconds, use [time].",
           "mandatory": true,
           "type": "string"
-        }       
+        }
       ]
     }
   ]
