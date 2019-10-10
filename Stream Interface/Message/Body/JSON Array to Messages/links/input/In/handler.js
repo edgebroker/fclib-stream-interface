@@ -2,10 +2,14 @@ function handler(In) {
     if (In.type() !== "text")
         throw "Input message is not a text message but: "+In.type();
     var body = In.body();
+    var jsonkey = props["jsonkey"];
     var self = this;
 
     if (body) {
         var array = JSON.parse(body);
+        if(jsonkey){
+            array = array[jsonkey];
+        }
         if (!Array.isArray(array))
             throw "Body content is not an array!";
         array.forEach(function (item) {
