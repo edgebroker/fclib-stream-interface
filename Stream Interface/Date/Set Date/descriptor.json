@@ -48,7 +48,7 @@
       "name": "outprop",
       "label": "Output Property",
       "description": "Provide the name of the output property which contains the date.",
-      "type": "identifier",
+      "type": "string",
       "mandatory": true
     }
   ]
