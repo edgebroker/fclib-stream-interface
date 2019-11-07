@@ -32,9 +32,9 @@ function handler() {
         var sliding = this.props["windowtype"] === "Sliding";
         if (this.props["countlimit"] === true) {
             if (sliding)
-                mem.limit().count(this.props["countlimit"]).sliding();
+                mem.limit().count(this.props["maximum"]).sliding();
             else
-                mem.limit().count(this.props["countlimit"]).tumbling();
+                mem.limit().count(this.props["maximum"]).tumbling();
         }
         if (this.props["timelimit"] === true) {
             if (sliding)
