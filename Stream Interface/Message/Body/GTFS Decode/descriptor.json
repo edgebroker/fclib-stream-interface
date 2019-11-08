@@ -1,5 +1,6 @@
 {
   "description": "Decodes a text message body containing a GTFS realtime protobuf format into a stringified JSON and returns it as text message body.",
+  "requirements": "Please upload these jar files to the flow: gtfs-realtime-bindings. Fetch it from Maven Central.",
   "links": {
     "input": [
       {
@@ -14,5 +15,16 @@
       }
     ]
   },
-  "properties": []
+  "properties": [
+    {
+       "name": "requirementsfulfilled",
+       "label": "Did you upload all required jar files?",
+       "description": "Please confirm",
+       "type": "choice",
+       "choice": [
+         "yes"
+       ],
+       "mandatory": true
+     }
+  ]
 }
