@@ -1,0 +1,18 @@
+{
+  "description": "Decodes a text message body containing a GTFS realtime protobuf format into a stringified JSON and returns it as text message body.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message"
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": []
+}
