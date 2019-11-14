@@ -1,5 +1,5 @@
 {
-  "description": "Decodes a text message body containing a GTFS realtime protobuf format into a stringified JSON and returns it as text message body.",
+  "description": "Decodes a text message body containing a GTFS realtime protobuf format and returns a message with the following properties set: id, label, long, lat, timestamp, speed (optional, only if present in the GTFS data).",
   "requirements": "Please upload these jar files to the flow: gtfs-realtime-bindings. Fetch it from Maven Central.",
   "links": {
     "input": [
