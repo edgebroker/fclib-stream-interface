@@ -1,0 +1,36 @@
+{
+  "description": "Selects messages from the referenced memory by a selector and returns a new memory with the result.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Result",
+        "type": "memory"
+      }
+    ]
+  },
+  "refs": {
+    "input": [
+      {
+        "name": "Memory",
+        "type": "memory",
+        "mandatory": true
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "selector",
+      "label": "Selector",
+      "description": "Provide a JMS message selector (SQL where condition, reference the properties in the message). You can reference property values of the incoming message with {propertyname}, e.g 'orderid = {myorderid}'",
+      "type": "selector",
+      "mandatory": true
+    }
+  ]
+}

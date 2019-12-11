@@ -1,11 +1,17 @@
 function handler(In) {
+
     var self = this;
+    var keys = this.props["keys"];
+
     if (In.type() !== "map")
         throw "Incoming message is not a map message";
 
-    for (var i=0;i<this.names.length;i++){
-        In.body().set(this.names[i], convert(subSystemTags(props(In, this.flowcontext.substitute(this.values[i]))), this.types[i]));
-    }
+    for (var i=0;i<this.keys.length;i++){
+        var name = this.keys[i]["name"];
+        var value = this.keys[i]["value"];
+        var type = this.keys[i]["type"];
+        In.body().set(name, convert(subSystemTags(props(In, this.substitute(value))), type));
+    }    
 
     this.executeOutputLink("Out", In);
 

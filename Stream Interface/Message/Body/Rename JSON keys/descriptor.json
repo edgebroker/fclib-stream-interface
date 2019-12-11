@@ -1,0 +1,52 @@
+{
+  "description": "Renames existing keys in JSON.",
+  "refs": {
+    "input": [
+      {
+        "name": "JSON",
+        "type": "json",
+        "mandatory": true
+      }
+    ]
+  },
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+
+    {
+      "name": "replacingkeys",
+      "label": "Keys to replace",
+      "mandatory": true,
+      "type": "table",
+      "tablefields": [
+        {
+          "name": "currentname",
+          "label": "Current Name",
+          "description": "Provide the name of the JSON key which should be replaced.",
+          "type": "identifier",
+          "mandatory": true
+        },
+        {
+          "name": "newname",
+          "label": "New Name",
+          "description": "Provide the name of the new JSON key which replaces the current one.",
+          "type": "string",
+          "mandatory": true
+        }
+      ]
+    }
+  ]
+}

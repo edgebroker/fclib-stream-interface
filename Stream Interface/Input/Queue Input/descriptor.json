@@ -5,7 +5,8 @@
     "output": [
       {
         "name": "Out",
-        "type": "message"
+        "type": "message",
+        "eventroot": true
       }
     ]
   },

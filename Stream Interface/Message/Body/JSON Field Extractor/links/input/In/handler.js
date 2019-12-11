@@ -1,57 +1,63 @@
 function handler(In) {
-    var self = this;
-    var extracted = extractValues(In);
-    for (var i = 0; i < extracted.max; i++) {
-        var outMsg = stream.create().message().copyMessage(In);
-        for (var j = 0; j < this.props["names"].length; j++) {
-            outMsg.property(this.props["names"][j]).set(extracted.values[j][i]);
+
+    var fields = this.props["fields"];
+
+    var resultMsg = stream.create().message().copyMessage(In);
+
+    for (var i = 0; i < fields.length; i++) {
+        var name = fields[i].name;
+        var path = fields[i].path;
+        var value = valueAt(path);
+        if (notEmpty(value)) {
+            resultMsg.property(name).set(value);
         }
-        this.executeOutputLink("Out", outMsg);
     }
 
-    function extractValues(msg) {
-        var STRING = Java.type("java.lang.String");
-        var values = [];
-        var max = 0;
+    this.executeOutputLink("Out", resultMsg);
+
+    function valueAt(path) {
+        var pathArray = path.split(".");
+        var incomingMessageValue = bodyAsStringFrom(In);
+
         try {
-            switch (msg.type()) {
-                case "bytes":
-                    transform.setBody(new STRING(msg.body()), false);
-                    break;
-                case "text":
-                    transform.setBody(msg.body(), false);
-                    break;
-                case "map":
-                    transform.setBody(msg.body().toJson(), false);
-                    break;
-                default:
-                    break;
-            }
-            for (var i = 0; i < self.props["paths"].length; i++) {
-                var result = transform.selectJSON(self.props["paths"][i]);
-                var val = [];
-                for (var j = 0; j < result.size(); j++) {
-                    val[j] = result.get(j);
-                }
-                values[i] = val;
-                max = Math.max(max, result.size());
-            }
-            for (i = 0; i < values.length; i++)
-                values[i] = fillWithLastValue(values[i], max);
+            var jsonMessage = JSON.parse(incomingMessageValue);
         } catch (e) {
-            self.flowcontext.sendError(self.compname, self.compid, e);
+            return null;
         }
-        return {max: max, values: values};
+
+        var value = pathArray.reduce(function (acc, i, index) {
+            var isStartPlaceholder = index === 0 && i === "$";
+            if (isStartPlaceholder) {
+                return acc;
+            }
+            if (acc) {
+                return acc[i];
+            }
+        }, jsonMessage);
+
+        var shouldStringify = value && typeof value === "object";
+        if (shouldStringify) {
+            value = JSON.stringify(value);
+        }
+
+        return value;
     }
 
-    function fillWithLastValue(inValue, max) {
-        var result = inValue;
-        var inLength = inValue.length;
-        var lastValue = "undefined";
-        if (inValue.length > 0)
-            lastValue = inValue[inValue.length - 1];
-        for (var i = inLength; i < max; i++)
-            result.push(lastValue);
-        return result;
+    function bodyAsStringFrom(message) {
+        var String = Java.type("java.lang.String");
+        switch (message.type()) {
+            case "bytes":
+                return new String(message.body());
+            case "text":
+                return message.body();
+            case "map":
+                return JSON.stringify(message.body().toJson());
+            default:
+                return "{}";
+        }
+    }
+
+    function notEmpty(value) {
+        return value !== undefined && value !== null;
     }
 }

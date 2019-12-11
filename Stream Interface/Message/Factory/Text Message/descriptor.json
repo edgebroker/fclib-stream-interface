@@ -1,5 +1,5 @@
 {
-  "description": "Creates a new TextMessage and optionally copies all properties from the incoming message.",
+  "description": "Creates a new TextMessage, or set the text body of a referenced message. Optionally copies all properties from the incoming message.",
   "links": {
     "input": [
       {
@@ -12,6 +12,15 @@
       {
         "name": "Out",
         "type": "message"
+      }
+    ]
+  },
+  "refs": {
+    "input": [
+      {
+        "name": "Message",
+        "type": "message",
+        "mandatory": false
       }
     ]
   },

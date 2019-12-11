@@ -1,0 +1,30 @@
+{
+  "description": "Decodes a text message body containing a GTFS realtime protobuf format and returns a message with the following properties set: id, label, long, lat, timestamp, speed (optional, only if present in the GTFS data).",
+  "requirements": "Please upload these jar files to the flow: gtfs-realtime-bindings. Fetch it from Maven Central.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message"
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+       "name": "requirementsfulfilled",
+       "label": "Did you upload all required jar files?",
+       "description": "Please confirm",
+       "type": "choice",
+       "choice": [
+         "yes"
+       ],
+       "mandatory": true
+     }
+  ]
+}

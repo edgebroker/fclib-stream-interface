@@ -1,0 +1,13 @@
+{
+  "description": "This components purges unused outputs created through the dynamic output components.",
+  "links": {
+    "input": [
+      {
+        "name": "Timer",
+        "type": "timer",
+        "mandatory": true
+      }
+    ]
+  },
+  "properties": [  ]
+}

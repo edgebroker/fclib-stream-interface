@@ -1,0 +1,67 @@
+{
+  "description": "Sets the properties either to a static value or a value from the referenced message. It does not create a copy but modifies the incoming message directly.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "refs": {
+    "input": [
+      {
+        "name": "Message",
+        "type": "message",
+        "mandatory": false
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "properties",
+      "label": "Properties",
+      "description": "Provide the properties to set from the referenced message.",
+      "mandatory": true,
+      "type": "table",
+      "tablefields": [
+        {
+          "name": "name",
+          "label": "Name",
+          "description": "Provide the name of the property.",
+          "type": "identifier",
+          "mandatory": true
+        },
+        {
+          "name": "type",
+          "label": "Type",
+          "description": "Provide the property value type.",
+          "type": "choice",
+          "choice": [
+            "boolean",
+            "string",
+            "integer",
+            "long",
+            "double",
+            "float"
+          ],
+          "mandatory": true
+        },
+        {
+          "name": "value",
+          "label": "Value",
+          "description": "Provide the value to set for the property. Either enter a static value or use {propertyname} to use a property value of the referenced message. To set the current time in milliseconds, use [time]. Further tags can be used: [routername], [appname], [flowname]. Specify [null] to delete the property.",
+          "mandatory": true,
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

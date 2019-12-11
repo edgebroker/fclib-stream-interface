@@ -1,0 +1,68 @@
+{
+  "description": "Schedules a message for later delivery.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message"
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "delay",
+      "label": "Delay",
+      "description": "Specify a delay value which is added to the current time.",
+      "type": "integer",
+      "min": 1,
+      "mandatory": true
+    },
+    {
+      "name": "timeunit",
+      "label": "Time Unit",
+      "description": "Specify the time unit.",
+      "type": "choice",
+      "choice": [
+        "Seconds",
+        "Minutes",
+        "Hours",
+        "Days",
+        "Months"
+      ],
+      "default": "Minutes",
+      "mandatory": true
+    },
+    {
+      "name": "destination",
+      "label": "Destination",
+      "description": "The name of the destination where the message should be delivered to.",
+      "type": "identifier",
+      "mandatory": true
+    },
+    {
+      "name": "destinationtype",
+      "label": "Destination Type",
+      "description": "The type of the destination.",
+      "type": "choice",
+      "choice": [
+        "queue",
+        "topic"
+      ],
+      "mandatory": true
+    },
+    {
+      "name": "schedulerqueue",
+      "label": "Scheduler Queue",
+      "description": "Specify the name of the scheduler input queue.",
+      "type": "string",
+      "default": "streams_scheduler_input",
+      "mandatory": false
+    }
+  ]
+}

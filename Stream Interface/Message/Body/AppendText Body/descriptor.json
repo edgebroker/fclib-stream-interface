@@ -1,0 +1,36 @@
+{
+  "description": "Appends the body of the incoming Text Message to the referenced Text Message",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "refs": {
+    "input": [
+      {
+        "name": "Message",
+        "type": "message",
+        "mandatory": true
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "delimiter",
+      "label": "Delimiter",
+      "description": "Provide an optional delimiter string that is places between the parts of the body.",
+      "type": "string",
+      "mandatory": false
+    }
+  ]
+}

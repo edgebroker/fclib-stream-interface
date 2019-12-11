@@ -3,7 +3,9 @@ function handler(In) {
 
     if (In.type() !== "text")
         throw "Incoming message is not a text message";
-    var body = this.flowcontext.substitute(this.props["body"]);
+    var body = this.substitute(this.props["body"]);
+
+    body = replaceAll(body, "{body}", In.body());
 
     In.properties().forEach(function(prop){
         body = replaceAll(body, "\\{"+prop.name()+"\\}", prop.value().toString());

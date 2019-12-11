@@ -1,0 +1,38 @@
+{
+  "description": "Escapes all JSON control characters in a property value.",
+  "requirements": "Please upload the JSON Simple library jar file to the flow.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "property",
+      "label": "Property Name",
+      "description": "Provide the name of the property.",
+      "type": "identifier",
+      "mandatory": true
+    },
+    {
+      "name": "requirementsfulfilled",
+      "label": "Did you upload all required jar files?",
+      "description": "Please confirm",
+      "type": "choice",
+      "choice": [
+        "yes"
+      ],
+      "mandatory": true
+    }
+  ]
+}

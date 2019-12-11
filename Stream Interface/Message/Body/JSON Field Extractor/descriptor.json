@@ -17,24 +17,27 @@
   },
   "properties": [
     {
-      "name": "names",
-      "label": "Names",
-      "type": "array",
-      "description": "Provide the names of the properties which must correspond to the paths in the 'Paths'.",
-      "fieldtypes": [
-        "identifier"
-      ],
-      "mandatory": true
-    },
-    {
-      "name": "paths",
-      "label": "Paths",
-      "description": "Provide the JSON Path which must correspond to the names in the 'Names'. A JSON Path always starts with a '$.'.",
-      "type": "array",
-      "fieldtypes": [
-        "jsonpath"
-      ],
-      "mandatory": true
+        "name": "fields",
+        "label": "JSON Fields",
+        "description": "Provide the JSON fields to parse and store in the message.",
+        "type": "table",
+        "tablefields": [
+            {
+              "name": "name",
+              "label": "Name",
+              "description": "Name of the message property to store the JSON property value.",
+              "type": "string",
+              "mandatory": true
+            },
+            {
+              "name": "path",
+              "label": "JSON Path",
+              "description": "JSON path to the target key. Must start with '$.'",
+              "type": "jsonpath",
+              "mandatory": true
+            }
+
+        ]
     }
   ]
 }

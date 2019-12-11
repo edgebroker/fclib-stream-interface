@@ -27,23 +27,26 @@
   "properties": [
     {
       "name": "properties",
-      "label": "Property Names",
-      "description": "Message properties to retrieve values from.",
-      "type": "array",
-      "fieldtypes": [
-        "identifier"
-      ],
-      "mandatory": true
-    },
-    {
-      "name": "fields",
-      "label": "Fields",
-      "type": "array",
-      "description": "JSON field names to set values to.",
-      "fieldtypes": [
-        "identifier"
-      ],
-      "mandatory": true
+      "label": "Properties",
+      "description": "Provide the properties to store as JSON.",
+      "mandatory": true,
+      "type": "table",
+      "tablefields": [
+        { 
+          "name": "name",
+          "label": "Name",
+          "description": "Name of the property to retrieve.",
+          "mandatory": true,
+          "type": "identifier"
+        },
+        {
+          "name": "key",
+          "label": "Key",
+          "description": "Key to store the property under within the JSON.",
+          "mandatory": true,
+          "type": "string"
+        }
+      ]
     }
   ]
 }

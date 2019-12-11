@@ -1,0 +1,50 @@
+{
+  "description": "Provides connector if this flow is used as a sub flow. All information (links, references) passed between this subflow and the embedding flow are passed through these components.",
+  "labelproperty": "name",
+  "properties": [
+    {
+      "name": "name",
+      "label": "Name",
+      "description": "Provide a unique name for this connector.",
+      "mandatory": true,
+      "type": "connectorname"
+    },
+    {
+      "name": "connectortype",
+      "label": "Connector Type",
+      "description": "Provide the type of this connector.",
+      "type": "choice",
+      "choice": [
+        "Link",
+        "Reference"
+      ],
+      "mandatory": true
+    },
+    {
+      "name": "porttype",
+      "label": "Port Type",
+      "description": "A port is created for this link/reference. This port is typed. Please specify a type. Common types are: message, timer, memory, property, json.",
+      "type": "string",
+      "mandatory": true
+    },
+    {
+      "name": "direction",
+      "label": "Direction",
+      "description": "Provide the direction.",
+      "type": "choice",
+      "choice": [
+        "Input",
+        "Output"
+      ],
+      "mandatory": true
+    },
+    {
+      "name": "mandatory",
+      "label": "Mandatory",
+      "description": "Check if the connector must be connected.",
+      "type": "boolean",
+      "default": false,
+      "mandatory": true
+    }
+  ]
+}

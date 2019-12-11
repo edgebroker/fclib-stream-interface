@@ -1,0 +1,19 @@
+{
+  "description": "Converts messages of a memory into a Text Message containing a JSON Array.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "memory",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": []
+}

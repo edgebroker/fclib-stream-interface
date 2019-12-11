@@ -5,15 +5,18 @@
     "output": [
       {
         "name": "Add",
-        "type": "message"
+        "type": "message",
+        "eventroot": true
       },
       {
         "name": "Change",
-        "type": "message"
+        "type": "message",
+        "eventroot": true
       },
       {
         "name": "Remove",
-        "type": "message"
+        "type": "message",
+        "eventroot": true
       }
     ]
   },

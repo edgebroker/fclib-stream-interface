@@ -1,0 +1,18 @@
+{
+  "description": "Encodes a text message body in base64 format.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message"
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": []
+}

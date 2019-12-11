@@ -30,7 +30,7 @@
       "label": "Copy Reply To",
       "description": "Copies the reply to destination.",
       "type": "boolean",
-      "default": false,
+      "default": true,
       "mandatory": true
     },
     {
@@ -38,7 +38,7 @@
       "label": "Copy Correlation Id",
       "description": "Copies the correlation id.",
       "type": "boolean",
-      "default": false,
+      "default": true,
       "mandatory": true
     }
   ]
