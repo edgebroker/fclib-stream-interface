@@ -1,0 +1,28 @@
+{
+  "description": "Calls the output and passes the input message in the number of configured iterations.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "iterations",
+      "label": "Iterations",
+      "type": "integer",
+      "min": 1,
+      "default": 1,
+      "mandatory": true
+    }
+  ]
+}
