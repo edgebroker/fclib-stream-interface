@@ -54,22 +54,22 @@ function handler(In) {
         var result;
         switch (type) {
             case 'boolean':
-                result = new self.BOOLEAN(value);
+                result = typeconvert.toBoolean(value);
                 break;
             case 'string':
                 result = value;
                 break;
             case 'integer':
-                result = new self.INTEGER(value);
+                result = typeconvert.toInteger(value);
                 break;
             case 'long':
-                result = new self.LONG(value);
+                result = typeconvert.toLong(value);
                 break;
             case 'double':
-                result = new self.DOUBLE(value);
+                result = typeconvert.toDouble(value);
                 break;
             case 'float':
-                result = new self.FLOAT(value);
+                result = typeconvert.toFloat(value);
                 break;
         }
         return result;
