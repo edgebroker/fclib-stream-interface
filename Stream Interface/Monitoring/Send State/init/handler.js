@@ -7,7 +7,7 @@ function handler() {
             if (inmsg.type() === "text")
                 text = replaceAll(text, "{body}", inmsg.body());
             inmsg.properties().forEach(function (prop) {
-                text = replaceAll(text, "\\{" + prop.name() + "\\}", prop.value().toString());
+                text = replaceAll(text, "\\{" + prop.name() + "\\}", prop.value().toObject());
             });
         }
         var msg = stream.create().message().textMessage()
