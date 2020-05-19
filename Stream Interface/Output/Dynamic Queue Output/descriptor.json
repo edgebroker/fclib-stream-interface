@@ -23,6 +23,20 @@
       "description": "Provide the name of the property that contains the name of the queue to send to.",
       "type": "string",
       "mandatory": true
+    },
+    {
+      "name": "autocreate",
+      "label": "Auto Create",
+      "description": "Automatically creates the queue if it doesn't exists yet.",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "name": "persistent",
+      "label": "Send Persistent",
+      "description": "Marks each message sent through this output as persistent.",
+      "type": "boolean",
+      "default": true
     }
   ]
 }

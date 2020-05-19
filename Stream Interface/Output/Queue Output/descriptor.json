@@ -24,6 +24,20 @@
       "description": "Provide the name the queue to connect this output to.",
       "type": "destination",
       "mandatory": true
+    },
+    {
+      "name": "autocreate",
+      "label": "Auto Create",
+      "description": "Automatically creates the queue if it doesn't exists yet.",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "name": "persistent",
+      "label": "Send Persistent",
+      "description": "Marks each message sent through this output as persistent.",
+      "type": "boolean",
+      "default": true
     }
   ]
 }

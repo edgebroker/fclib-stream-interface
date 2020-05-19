@@ -31,6 +31,13 @@
       "description": "Provide an optional JMS message selector (SQL where condition, reference the properties in the message).",
       "type": "selector",
       "mandatory": false
+    },
+    {
+      "name": "autocreate",
+      "label": "Auto Create",
+      "description": "Automatically creates the queue if it doesn't exists yet.",
+      "type": "boolean",
+      "default": true
     }
   ]
 }
