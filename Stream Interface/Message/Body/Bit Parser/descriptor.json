@@ -1,0 +1,71 @@
+{
+  "description": "Assigns the incoming byte stream and converts the assigned bits to the defined type. ",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "properties",
+      "label": "Bit Properties",
+      "description": "Specify the properties that the parsed bits should be stored in.",
+      "type": "table",
+      "mandatory": true,
+      "tablefields": [
+        {
+          "name": "json_field",
+          "label": "JSON Field",
+          "description": "Provide the JSON field names which corresponds to the values to be parsed.",
+          "type": "string",
+          "mandatory": true
+        },
+        {
+          "name": "prop_name",
+          "label": "Resulting Property Name",
+          "description": "Provide the resulting property names that are set in the message with the extracted and converted values.",
+          "type": "string",
+          "mandatory": true
+        },
+        {
+          "name": "type",
+          "label": "Data Type",
+          "description": "Provides the data type of the value.",
+          "type": "choice",
+          "choice": [
+            "boolean",
+            "float (little endian)",
+            "float (big endian)",
+            "UINT",
+            "SINT"
+          ],
+          "mandatory": true
+        },
+        {
+          "name": "bit_startpos",
+          "label": "Bit Start Position",
+          "description": "Provides the bit start position.",
+          "type": "integer",
+          "mandatory": true
+        },
+        {
+          "name": "bit_length",
+          "label": "Length in Bits",
+          "description": "Provides the length of the property in bits.",
+          "type": "integer",
+          "mandatory": true
+        }
+      ]
+    }
+  ]
+}
