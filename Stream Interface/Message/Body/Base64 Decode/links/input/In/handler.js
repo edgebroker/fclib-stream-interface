@@ -5,6 +5,6 @@ function handler(In) {
         throw "TextMessage body is null!";
     var STRING = Java.type("java.lang.String");
     var BASE64 = Java.type("java.util.Base64");
-    In.body(new STRING(BASE64.getDecoder().decode(In.body().getBytes())));
+    In.body(new STRING(BASE64.getDecoder().decode(In.body())));
     this.executeOutputLink("Out", In);
 }

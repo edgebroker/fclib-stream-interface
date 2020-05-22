@@ -1,0 +1,29 @@
+{
+  "description": "Adds a message to the referenced memory goup.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+    "refs": {
+      "input": [
+        {
+          "name": "MemoryGroup",
+          "type": "memorygroup",
+          "mandatory": true
+        }
+      ]
+    },
+    "properties": [
+    ]
+  }

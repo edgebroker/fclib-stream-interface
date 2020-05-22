@@ -15,5 +15,16 @@
       }
     ]
   },
-  "properties": []
+  "properties": [
+    {
+      "name": "filter",
+      "label": "Property Filter",
+      "type": "array",
+      "description": "Only respect the following properties.",
+      "fieldtypes": [
+        "identifier"
+      ],
+      "mandatory": false
+    }
+  ]
 }

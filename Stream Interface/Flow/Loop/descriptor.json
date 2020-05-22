@@ -1,0 +1,48 @@
+{
+  "description": "Calls the output and passes the input message in the number of configured iterations. The loop can be executed synchronous or asynchronous. In synchronous mode the output is directly called which may block the flow's event thread for too long and the single transaction that covers one event execution to become too big. Synchronous executions are therefore hard limited to 10000 iterations. Asynchronous execution enqueues each iteration into the flow's event queue so other events might be executed within that loop. There is no limit for asynchronous execution. ",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message",
+        "eventroot": true
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "static",
+      "label": "Number of Iteration static (true) or from a Property of the Input Message (false)?",
+      "type": "boolean",
+      "default": true,
+      "mandatory": true
+    },
+    {
+      "name": "iterations",
+      "label": "Iterations",
+      "type": "integer",
+      "min": 1,
+      "mandatory": false
+    },
+    {
+      "name": "property",
+      "label": "Name of the Property of the Input Message",
+      "type": "identifier",
+      "mandatory": false
+    },
+    {
+      "name": "async",
+      "label": "Asynchronous Execution",
+      "type": "boolean",
+      "default": true,
+      "mandatory": true
+    }
+  ]
+}
