@@ -1,0 +1,59 @@
+{
+  "description": "Sets JSON Fields of a JSON Object of a Text Body.",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "fields",
+      "label": "Fields",
+      "description": "Provide the field to add to the JSON.",
+      "mandatory": true,
+      "type": "table",
+      "tablefields": [
+        {
+          "name": "name",
+          "label": "Name",
+          "description": "Provide the name of the field.",
+          "type": "identifier",
+          "mandatory": true
+        },
+        {
+          "name": "type",
+          "label": "Type",
+          "description": "Provide the field value type.",
+          "type": "choice",
+          "choice": [
+            "boolean",
+            "string",
+            "integer",
+            "long",
+            "double",
+            "float"
+          ],
+          "mandatory": true
+        },
+        {
+          "name": "value",
+          "label": "Value",
+          "description": "Provide the value to set for the field. Either enter a static value or use {propertyname} to use a property value of the incoming message. To set the current time in milliseconds, use [time]. Further tags can be used: [routername], [appname], [flowname], or [null] to delete the field.",
+          "mandatory": true,
+          "type": "string"
+        }
+      ]
+    }
+
+  ]
+}
