@@ -27,7 +27,7 @@ function handler(In) {
    }
 
    function order(inJson) {
-       if (self.props["filter"].length === 0)
+       if (!self.props["filter"]||self.props["filter"].length === 0)
            return inJson;
        var outJson = {};
        for (var i=0;i<self.props["filter"].length; i++) {
