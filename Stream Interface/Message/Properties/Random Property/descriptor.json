@@ -1,0 +1,115 @@
+{
+  "description": "Sets a simulated sensor value in a message property, without the need of a Processor. Every message received on In gets the property set to a random double and is then sent unchanged otherwise (the same message, not a copy) to Out. Per message, the value is determined in this order: (1) with a probability of 'Null Rate' percent, no value is set and the property is removed from the message, simulating a broken reading; (2) otherwise, with a probability of 'Outlier Rate' percent, the value is drawn uniformly from ['Outlier Min', 'Outlier Max']; (3) otherwise, if a warm phase is configured ('Phase Seconds' and 'Phase Period' both > 0) and the current time is inside it, the value is drawn uniformly from ['Phase Min', 'Phase Max']; (4) otherwise the value is drawn uniformly from ['Min', 'Max']. The warm phase is periodic and aligned to the clock: time is divided into consecutive periods of 'Phase Period' seconds since the epoch in UTC (e.g. full hours for 3600), and the first 'Phase Seconds' seconds of every period are the warm phase. The value is rounded to 'Decimals' decimal places and set as a double. All min/max pairs are inclusive bounds where min must be <= max; configuration errors are reported when the first message arrives. The component is labeled with the name of the property, so several instances on one canvas can be told apart.",
+  "labelproperty": "property",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "property",
+      "label": "Property",
+      "description": "Provide the name of the message property to set to the simulated value. It is displayed as the label of the component.",
+      "type": "identifier",
+      "mandatory": true
+    },
+    {
+      "name": "min",
+      "label": "Min",
+      "description": "Provide the lower bound (double, inclusive) of the normal value range, e.g. 20.5.",
+      "type": "string",
+      "mandatory": true
+    },
+    {
+      "name": "max",
+      "label": "Max",
+      "description": "Provide the upper bound (double, inclusive) of the normal value range, e.g. 23.0. Must be >= 'Min'.",
+      "type": "string",
+      "mandatory": true
+    },
+    {
+      "name": "decimals",
+      "label": "Decimals",
+      "description": "Provide the number of decimal places the value is rounded to (0 to 15). 0 produces whole numbers, still set as double.",
+      "type": "integer",
+      "min": 0,
+      "default": 1,
+      "mandatory": true
+    },
+    {
+      "name": "outlierrate",
+      "label": "Outlier Rate (%)",
+      "description": "Provide the probability in percent (0 to 100) that a message gets an outlier value drawn from ['Outlier Min', 'Outlier Max'] instead of a regular value. 0 disables outliers. Outliers apply during the warm phase as well.",
+      "type": "integer",
+      "min": 0,
+      "default": 0,
+      "mandatory": false
+    },
+    {
+      "name": "outliermin",
+      "label": "Outlier Min",
+      "description": "Provide the lower bound (double, inclusive) of the outlier value range. Required if 'Outlier Rate' > 0.",
+      "type": "string",
+      "mandatory": false
+    },
+    {
+      "name": "outliermax",
+      "label": "Outlier Max",
+      "description": "Provide the upper bound (double, inclusive) of the outlier value range. Must be >= 'Outlier Min'. Required if 'Outlier Rate' > 0.",
+      "type": "string",
+      "mandatory": false
+    },
+    {
+      "name": "nullrate",
+      "label": "Null Rate (%)",
+      "description": "Provide the probability in percent (0 to 100) that the property is left unset, simulating a broken reading. In that case the property is removed if the incoming message already carries it, and the message is still sent to Out. 0 disables it.",
+      "type": "integer",
+      "min": 0,
+      "default": 0,
+      "mandatory": false
+    },
+    {
+      "name": "phaseseconds",
+      "label": "Phase Seconds",
+      "description": "Optional warm phase: provide how many seconds at the start of each 'Phase Period' the value is drawn from ['Phase Min', 'Phase Max'] instead of ['Min', 'Max']. Must be <= 'Phase Period'. 0 disables the warm phase.",
+      "type": "integer",
+      "min": 0,
+      "default": 0,
+      "mandatory": false
+    },
+    {
+      "name": "phaseperiod",
+      "label": "Phase Period (Seconds)",
+      "description": "Optional warm phase: provide the length of a period in seconds. Periods are aligned to the clock (multiples of this length since the epoch in UTC, e.g. full hours for 3600). 0 disables the warm phase.",
+      "type": "integer",
+      "min": 0,
+      "default": 0,
+      "mandatory": false
+    },
+    {
+      "name": "phasemin",
+      "label": "Phase Min",
+      "description": "Provide the lower bound (double, inclusive) of the value range during the warm phase. Required if the warm phase is enabled.",
+      "type": "string",
+      "mandatory": false
+    },
+    {
+      "name": "phasemax",
+      "label": "Phase Max",
+      "description": "Provide the upper bound (double, inclusive) of the value range during the warm phase. Must be >= 'Phase Min'. Required if the warm phase is enabled.",
+      "type": "string",
+      "mandatory": false
+    }
+  ]
+}

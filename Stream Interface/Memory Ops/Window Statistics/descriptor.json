@@ -1,0 +1,88 @@
+{
+  "description": "Computes min, max, average and count of a numeric message property per key and per time window in a single node. Incoming messages are assigned to a window by their arrival time (processing time) and are not passed through. At the end of each window, one NEW message is emitted per key that received at least one message in that window. Each emitted message has a fresh message id, so a downstream Memory does not drop it as a duplicate, and carries the properties key (value of the key property, or the name of the value property if no key property is set), min, max, avg (only set if count > 0), count (number of valid numeric values), invalid (number of messages without a numeric value; always 0 if 'Count Invalid' is disabled), windowstart and windowend (epoch milliseconds, start inclusive, end exclusive). Tumbling windows are consecutive and non-overlapping, each 'Window Length' seconds long. Sliding windows are 'Window Length' seconds long and are emitted every 'Step' seconds, so consecutive windows overlap. If 'Aligned' is enabled, window boundaries are aligned to the clock (multiples of the window length, or of the step for sliding windows, since the epoch in UTC, e.g. full minutes for 60 seconds) and the first window may therefore be shorter. Otherwise windows start when the flow starts. Window state is held in memory only and is not persistent; it is lost when the flow stops.",
+  "labelproperty": "name",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Out",
+        "type": "message"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "name",
+      "label": "Name",
+      "description": "Provide a name for this statistics node. It is displayed as the label of the component.",
+      "type": "string",
+      "mandatory": true
+    },
+    {
+      "name": "property",
+      "label": "Value Property",
+      "description": "Provide the name of the message property that contains the numeric value.",
+      "type": "identifier",
+      "mandatory": true
+    },
+    {
+      "name": "keyproperty",
+      "label": "Key Property",
+      "description": "Provide an optional name of the message property to group by. Statistics are computed separately for each distinct value of this property. Messages without this property are rejected with an error. If not set, all messages are aggregated under a single key.",
+      "type": "identifier",
+      "mandatory": false
+    },
+    {
+      "name": "window",
+      "label": "Window Type",
+      "description": "Tumbling: consecutive, non-overlapping windows of 'Window Length' seconds. Sliding: windows of 'Window Length' seconds, emitted every 'Step' seconds (overlapping).",
+      "type": "choice",
+      "choice": [
+        "tumbling",
+        "sliding"
+      ],
+      "default": "tumbling",
+      "mandatory": true
+    },
+    {
+      "name": "seconds",
+      "label": "Window Length (Seconds)",
+      "description": "Provide the length of a window in seconds.",
+      "type": "integer",
+      "min": 1,
+      "default": 60,
+      "mandatory": true
+    },
+    {
+      "name": "step",
+      "label": "Step (Seconds)",
+      "description": "Sliding windows only: provide how often (in seconds) a sliding window is emitted. Must be <= 'Window Length'. Ignored for tumbling windows.",
+      "type": "integer",
+      "min": 1,
+      "default": 10,
+      "mandatory": false
+    },
+    {
+      "name": "aligned",
+      "label": "Aligned",
+      "description": "If enabled, window boundaries are aligned to the clock (e.g. full minutes for a 60 seconds window). The first window may be shorter. If disabled, windows start when the flow starts.",
+      "type": "boolean",
+      "default": true,
+      "mandatory": true
+    },
+    {
+      "name": "countinvalid",
+      "label": "Count Invalid",
+      "description": "If enabled, a message without a numeric value in the value property increments the 'invalid' counter of its key. If disabled, such messages are silently ignored.",
+      "type": "boolean",
+      "default": true,
+      "mandatory": true
+    }
+  ]
+}
