@@ -1,0 +1,86 @@
+{
+  "description": "A Key Value Store holds the latest record (message) per key and can be queried. It is the state behind a REST interface or a console. The key of a record is the value of the Key Property; keys are stored and compared as strings. Upsert stores the incoming message as the record for its key; if a record already exists for that key, its properties that are not set in the incoming message are kept (merged), all others are replaced. Get emits the stored record on Found, with the reply headers (replyTo, correlationId) of the request, or the request plus the property error = \"Unknown key '<key>'\" on NotFound. List emits one text message whose body is a JSON array of all records (one object of record properties each), sorted by key; it also carries the reply headers of the request. Remove removes the record for the key. Changed is emitted after every Upsert (with the stored record) and every Remove (with the request). The Memory reference exposes the underlying memory to Memory Ops for reading.",
+  "labelproperty": "name",
+  "links": {
+    "input": [
+      {
+        "name": "Upsert",
+        "type": "message"
+      },
+      {
+        "name": "Get",
+        "type": "message"
+      },
+      {
+        "name": "List",
+        "type": "message"
+      },
+      {
+        "name": "Remove",
+        "type": "message"
+      }
+    ],
+    "output": [
+      {
+        "name": "Found",
+        "type": "message"
+      },
+      {
+        "name": "NotFound",
+        "type": "message"
+      },
+      {
+        "name": "Listed",
+        "type": "message"
+      },
+      {
+        "name": "Changed",
+        "type": "message"
+      }
+    ]
+  },
+  "refs": {
+    "output": [
+      {
+        "name": "Memory",
+        "type": "memory"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "name",
+      "label": "Name",
+      "description": "Provide a name for this store. It is displayed as the label of the component.",
+      "type": "string",
+      "mandatory": false
+    },
+    {
+      "name": "keyproperty",
+      "label": "Key Property",
+      "description": "Provide the name of the message property that contains the key of a record. Upsert, Get and Remove messages must carry this property.",
+      "type": "identifier",
+      "mandatory": true
+    },
+    {
+      "name": "persistent",
+      "label": "Persistent",
+      "description": "If enabled, the records are stored persistently in the flow queue and survive a restart of the flow. Otherwise they are held in memory (heap) only.",
+      "type": "boolean",
+      "default": true,
+      "mandatory": false
+    },
+    {
+      "name": "keycase",
+      "label": "Key Case",
+      "description": "exact: keys are case sensitive. ignore: keys are case insensitive; a record keeps the key spelling of its latest Upsert.",
+      "type": "choice",
+      "choice": [
+        "exact",
+        "ignore"
+      ],
+      "default": "exact",
+      "mandatory": false
+    }
+  ]
+}
