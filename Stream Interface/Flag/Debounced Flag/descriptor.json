@@ -1,0 +1,86 @@
+{
+  "description": "A Debounced Flag raises an alarm only after a condition has held for a number of consecutive messages and clears it only after the condition has failed for a number of consecutive messages, so a single outlier neither raises nor clears it. Every message on In is evaluated against the Condition (a message selector). While a key is cleared, each match counts towards raising and each non-match resets that count; when the count reaches Raise After, the key becomes raised and the message is sent to Raised. While a key is raised, each non-match counts towards clearing and each match resets that count; when the count reaches Clear After, the key becomes cleared and the message is sent to Cleared. A raised key is never raised again, so exactly one Cleared follows each Raised. If a Key Property is set, the state is kept separately per value of that property (e.g. per room id), otherwise one state is kept for all messages. Raised and Cleared send a copy of the triggering message with the properties state (\"RAISED\" or \"CLEARED\"), count (the number of consecutive messages that led to the change) and key (the key value, or an empty string without a Key Property) added. A message that lacks the Ignore Missing property or the Key Property is sent to Rejected with the property error added and does not change any count. If Persistent is enabled, the state survives a redeploy or restart of the flow.",
+  "labelproperty": "name",
+  "links": {
+    "input": [
+      {
+        "name": "In",
+        "type": "message",
+        "mandatory": true
+      }
+    ],
+    "output": [
+      {
+        "name": "Raised",
+        "type": "message",
+        "mandatory": true
+      },
+      {
+        "name": "Cleared",
+        "type": "message",
+        "mandatory": true
+      },
+      {
+        "name": "Rejected",
+        "type": "message",
+        "mandatory": false
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "name",
+      "label": "Name",
+      "description": "Provide a name for this flag. It is displayed as the label of the component.",
+      "type": "string",
+      "mandatory": false
+    },
+    {
+      "name": "condition",
+      "label": "Condition",
+      "description": "Provide the alarm condition as a JMS message selector (SQL where condition, reference the properties in the message), e.g. temperature > 8. A message that matches counts towards raising, a message that doesn't match counts towards clearing. A selector that references a missing property doesn't match; use Ignore Missing to skip such messages instead.",
+      "type": "selector",
+      "mandatory": true
+    },
+    {
+      "name": "raiseafter",
+      "label": "Raise After",
+      "description": "Provide the number of consecutive matching messages (at least 1) after which a cleared key is raised.",
+      "type": "integer",
+      "min": 1,
+      "default": 3,
+      "mandatory": true
+    },
+    {
+      "name": "clearafter",
+      "label": "Clear After",
+      "description": "Provide the number of consecutive non-matching messages (at least 1) after which a raised key is cleared.",
+      "type": "integer",
+      "min": 1,
+      "default": 1,
+      "mandatory": true
+    },
+    {
+      "name": "keyproperty",
+      "label": "Key Property",
+      "description": "Optionally provide the name of the message property whose value identifies the key (e.g. roomid). The state is kept separately per key value; values are compared as strings. A message without this property is sent to Rejected. If empty, one state is kept for all messages.",
+      "type": "identifier",
+      "mandatory": false
+    },
+    {
+      "name": "ignoremissing",
+      "label": "Ignore Missing",
+      "description": "Optionally provide the name of a message property (usually the one the condition tests, e.g. temperature). A message without this property is sent to Rejected and doesn't change any count.",
+      "type": "identifier",
+      "mandatory": false
+    },
+    {
+      "name": "persistent",
+      "label": "Persistent",
+      "description": "If enabled, the state of all keys is stored persistently in the flow queue and survives a redeploy or restart of the flow. Otherwise it is held in memory (heap) only and starts cleared.",
+      "type": "boolean",
+      "default": true,
+      "mandatory": false
+    }
+  ]
+}
